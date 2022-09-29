@@ -1,0 +1,37 @@
+:root{
+    --white: #fff;
+    --black: #222222;
+    --bleu: #38B6FF;
+}
+
+
+body{
+    margin: 0;
+    padding: 0;
+}
+body #home #navbar ul li a{
+    color: var(--bleu);
+}
+body #home{
+    width: 100%;
+    height: 100vh;
+}
+body #home #content{
+    width: 100%;
+    height: 70vh;
+    background-image: url(../assets/home1.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    transition: 2s;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+body #home #article_tandance{
+    width: 50%;
+    height: 40vh;
+    margin-left: 25%;
+    margin-top: -12vh;
+    background-color: var(--black);
+    border-radius: 8px;
+}
