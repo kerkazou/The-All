@@ -173,4 +173,7 @@ body #contact form button{
     background-color: var(--bleu);
     border: none;
 }
-/*********** contact ***********/
+/*********** footer css ***********/
+#footer{
+    background-color: var(--bleu);
+}
