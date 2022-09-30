@@ -28,7 +28,7 @@
                                 <a class="nav-link active" aria-current="page" href="#home">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#bloks">Bloks</a>
+                                <a class="nav-link" href="#blog">Bloks</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#about">About</a>
@@ -98,6 +98,37 @@
         </div>
         <div class="col-9" id="content"></div>
     </div>
+
+    <!-- Contact -->
+    <div class="d-flex gap-5" id="contact">
+        <div class="text-uppercase" id="title">Contact Us</div>
+        <div class="text-center">
+            Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within a matter of hours to help you.
+        </div>
+        <form class="w-75 d-flex flex-column gap-md-5 gap-3" method="POST" action="">
+            <div class="row d-flex justify-content-center align-items-center gap-3">
+                <div class="d-flex flex-column gap-4 col-md-5">
+                    <div class="form-group">
+                        <input class="form-control" name="username" type="text" placeholder="Username">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" name="email" type="email" placeholder="Email" required="">
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="form-group form-group-textarea mb-md-0">
+                        <textarea class="form-control" name="message" placeholder="Message..." required=""></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center"><button class="btn btn-success btn-xl text-uppercase" type="submit">Send Message</button></div>
+        </form>
+    </div>
+
+
+    <!-- Footer -->
+    <footer id="footer"></footer>
+
 
 </body>
 </html>
