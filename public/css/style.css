@@ -147,3 +147,9 @@ body #blog #content{
     background-color: var(--black);
 }
 /*********** Blog ***********/
+
+
+/* ------ Chart ------ */
+.chart{
+    background: #000;
+}
