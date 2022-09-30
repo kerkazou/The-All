@@ -9,12 +9,26 @@ body{
     margin: 0;
     padding: 0;
 }
-body #home #navbar ul li a{
-    color: var(--bleu);
+
+
+/*********** NarBar ***********/
+body #navbar ul li a{
+    color: var(--white);
+    font-weight: bold;
 }
+body #navbar #logo{
+    width: 25%;
+}
+body #navbar ul li .active{
+    background-color: var(--bleu);
+}
+/*********** NarBar ***********/
+
+
+/*********** Home ***********/
 body #home{
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
 }
 body #home #content{
     width: 100%;
@@ -27,11 +41,109 @@ body #home #content{
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
 }
+body #home #content #content_text{
+    position: absolute;
+    top: 30vh;
+    font-size: 30px;
+}
+body #home #content #content_text a{
+    color: var(--bleu);
+    font-weight: bold;
+    text-decoration: none;
+}
+body #home #content #content_text span{
+    color: var(--white);
+}
+body #home #content #content_search{
+    width: 30%;
+    margin-left: 35%;
+    position: absolute;
+    top: 40vh;
+    font-size: 30px;
+}
+body #home #content #content_search input{
+    height: 50px;
+}
 body #home #article_tandance{
     width: 50%;
-    height: 40vh;
+    min-height: 40vh;
     margin-left: 25%;
     margin-top: -12vh;
-    background-color: var(--black);
     border-radius: 8px;
 }
+body #home #article_tandance #image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+body #home #article_tandance #title{
+    color: var(--bleu);
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+body #home #article_tandance #discriptions{
+    font-size: 25px;
+}
+body #home #article_tandance #lire_suite{
+    font-size: 15px;
+}
+/*********** Home ***********/
+
+
+/*********** Blog ***********/
+body #blog{
+    width: 100%;
+    min-height: 100vh;
+}
+body #blog #sidebar{
+    height: 80vh;
+    background-color: #fff;
+}
+body #blog #sidebar #title{
+    font-size: 25px;
+    font-weight: 700;
+    border-bottom: solid 2px var(--black);
+}
+body #blog #sidebar #categorie{
+    width: 90%;
+    height: 30%;
+    background-color: var(--white);
+    border-radius: 8px;
+}
+body #blog #sidebar #categorie div{
+    background-color: var(--bleu);
+    color: var(--black);
+    border: none;
+    padding: 0px 5px;
+    border-radius: 8px;
+}
+body #blog #sidebar #categorie div span{
+    font-size: 18px;
+}
+body #blog #sidebar #categorie div button{
+    font-size: 10px;
+}
+body #blog #sidebar #btn-categorie{
+    width: 90%;
+}
+body #blog #sidebar #btn-categorie .btn{
+    background-color: var(--white);
+    color: var(--bleu);
+    font-weight: bold;
+    border: solid 1px var(--bleu);
+}
+body #blog #sidebar #btn-categorie .btn:hover{
+    background-color: var(--bleu);
+    color: var(--white);
+    border: none;
+}
+
+
+
+
+body #blog #content{
+    height: 100%;
+    background-color: var(--black);
+}
+/*********** Blog ***********/
