@@ -12,6 +12,9 @@ app.get('/', (req, res) => {
 app.get('/The-All', (req, res) => {
   res.render('The-All');
 });
+app.get('/Article', (req, res) => {
+  res.render('Article.ejs');
+});
 
 app.get('/Dashboard', (req, res) => {
   res.render('Dashboard');
