@@ -82,6 +82,11 @@ body #home #article_tandance #title{
     font-weight: bold;
     text-align: center;
 }
+body #home #article_tandance #categorie{
+    color: var(--black);
+    font-weight: 600;
+    font-size: 18px;
+}
 body #home #article_tandance #discriptions{
     font-size: 25px;
 }
