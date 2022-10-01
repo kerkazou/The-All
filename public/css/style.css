@@ -1,40 +1,45 @@
-:root{
+:root {
     --white: #fff;
     --black: #222222;
     --bleu: #38B6FF;
 }
 
 
-body{
+body {
     margin: 0;
     padding: 0;
 }
 
 
 /*********** NarBar ***********/
-body #navbar div:last-child{
+body #navbar div:last-child {
     z-index: 999;
 }
-body #navbar ul li a{
+
+body #navbar ul li a {
     color: var(--black);
     font-weight: bold;
 }
-body #navbar #logo{
+
+body #navbar #logo {
     width: 25%;
 }
-body #navbar ul li .active{
+
+body #navbar ul li .active {
     background-color: var(--bleu);
     color: var(--white);
 }
+
 /*********** NarBar ***********/
 
 
 /*********** Home ***********/
-body #home{
+body #home {
     width: 100%;
     height: 100vh;
 }
-body #home #content{
+
+body #home #content {
     width: 100%;
     height: 70vh;
     background-image: url(../assets/home1.jpg);
@@ -48,104 +53,132 @@ body #home #content{
     justify-content: center;
     align-items: center;
 }
-body #home #content #content_text{
+
+body #home #content #content_text {
     position: absolute;
     top: 22vh;
     font-size: 30px;
 }
-body #home #content #content_text a{
+
+body #home #content #content_text a {
     color: var(--bleu);
     font-weight: bold;
     text-decoration: none;
 }
-body #home #content #content_text span{
+
+body #home #content #content_text span {
     color: var(--white);
 }
-body #home #content #content_search{
+
+body #home #content #content_search {
     position: absolute;
     top: 40vh;
     font-size: 30px;
 }
-body #home #content #content_search input{
+
+body #home #content #content_search input {
     height: 50px;
 }
-body #home #article_tandance{
+
+body #home #article_tandance {
     height: 40vh;
     margin-top: -12vh;
     border-radius: 8px;
 }
-body #home #article_tandance #image img{
+
+body #home #article_tandance #image img {
     width: 100%;
     height: 100%;
     border-radius: 8px;
 }
-body #home #article_tandance #title{
+
+body #home #article_tandance #title {
     color: var(--bleu);
     font-size: 40px;
     font-weight: bold;
     text-align: center;
 }
-body #home #article_tandance #categorie{
+
+body #home #article_tandance #categorie {
     color: var(--black);
     font-weight: 600;
     font-size: 18px;
 }
-body #home #article_tandance #discriptions{
+
+body #home #article_tandance #discriptions {
     font-size: 15px;
 }
-body #home #article_tandance #lire_suite{
+
+body #home #article_tandance #lire_suite {
     font-size: 15px;
 }
+<<<<<<< HEAD
 .bi:hover{
     color: var(--bleu);
 }
+=======
+
+>>>>>>> 0635a4c4367ac9284f8570a4daf5c4609350bde2
 /*********** Home ***********/
 
 
 /*********** Blog ***********/
-body #blog{
+body #blog {
     width: 100%;
 }
-body #blog #sidebar_categorie input[type='radio'][name='buttonCategorie']{
-    display:none;
+
+body #blog #sidebar_categorie input[type='radio'][name='buttonCategorie'] {
+    display: none;
 }
+
 body #blog #sidebar_categorie label {
     background-color: var(--white);
     color: var(--bleu);
     font-weight: bold;
     border: solid 1px var(--bleu);
-    text-align:center;
+    text-align: center;
 }
-body #blog #sidebar_categorie input[type='radio'][name='buttonCategorie']:checked + label {
+
+body #blog #sidebar_categorie input[type='radio'][name='buttonCategorie']:checked+label {
     background-color: var(--bleu);
     color: var(--white);
 }
-body #blog #content .articles img{
+
+body #blog #content .articles img {
     height: 200px;
 }
-body #blog #content .articles .title{
+
+body #blog #content .articles .title {
     font-size: 20px;
     font-weight: bold;
     text-align: center;
 }
+<<<<<<< HEAD
 body #blog #content .articles .title a{
     color: var(--bleu);
 }
 body #blog #content .articles .categorie{
+=======
+
+body #blog #content .articles .categorie {
+>>>>>>> 0635a4c4367ac9284f8570a4daf5c4609350bde2
     font-size: 15px;
     font-weight: 600;
 }
-body #blog #content .articles .discription{
+
+body #blog #content .articles .discription {
     font-size: 15px;
 }
-body #blog #content .articles .lire_suite{
+
+body #blog #content .articles .lire_suite {
     font-size: 12px;
 }
+
 /*********** Blog ***********/
 
 
 /*********** About ***********/
-body #about{
+body #about {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -153,29 +186,35 @@ body #about{
     justify-content: center;
     align-items: center;
 }
-body #about #title{
+
+body #about #title {
     font-size: 50px;
     font-weight: bold;
 }
-body #about .card #name{
+
+body #about .card #name {
     text-align: center;
     font-size: 30px;
     font-weight: 600;
 }
-body #about .card #discription{
+
+body #about .card #discription {
     font-size: 16px;
 }
-body #about .card #media{
+
+body #about .card #media {
     font-size: 28px;
 }
-body #about .card #media i:hover{
+
+body #about .card #media i:hover {
     color: var(--bleu);
 }
+
 /*********** About ***********/
 
 
 /*********** contact ***********/
-body #contact{
+body #contact {
     width: 100%;
     height: 100vh;
     background-image: url(../assets/map.png);
@@ -188,29 +227,46 @@ body #contact{
     justify-content: center;
     align-items: center;
 }
-body #contact #title{
+
+body #contact #title {
     font-size: 50px;
     font-weight: bold;
 }
-body #contact form input{
+
+body #contact form input {
     height: 50px;
 }
-body #contact form textarea{
+
+body #contact form textarea {
     min-height: 130px;
 }
-body #contact form button{
+
+body #contact form button {
     height: 50px;
     background-color: var(--bleu);
     color: var(--white);
     border: none;
 }
+
 /*********** contact ***********/
 
 
 /*********** Footer ***********/
-body #footer{
+body #footer {
     width: 100%;
     height: 100%;
     background-color: var(--bleu);
 }
+
 /*********** Footer ***********/
+
+
+/*********** Dashboard ***********/
+body .active_assidBar {
+    background-color: #3498DB;
+    border-radius: 50px 0 0 50px;
+    width: 226px;
+    padding: 6px 0px;
+}
+
+/*********** Dashboard ***********/
