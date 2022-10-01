@@ -18,6 +18,9 @@ app.get('/Article', (req, res) => {
 app.get('/categories', (req, res) => {
   res.render('categories.ejs');
 });
+app.get('/commentaires', (req, res) => {
+  res.render('commentaires.ejs');
+});
 
 app.get('/Dashboard', (req, res) => {
   res.render('Dashboard');
