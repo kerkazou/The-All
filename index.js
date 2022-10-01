@@ -17,4 +17,12 @@ app.get('/Dashboard', (req, res) => {
   res.render('Dashboard');
 });
 
-app.listen(3000, () => console.log('Server running on http://localhost:${port}'));
+app.get('/Profile', (req, res) => {
+  res.render('Profile');
+});
+
+app.get('/Contacts', (req, res) => {
+  res.render('Contacts');
+});
+
+app.listen(5000, () => console.log('Server running on http://localhost:${port}'));
