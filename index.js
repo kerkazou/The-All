@@ -15,6 +15,9 @@ app.get('/The-All', (req, res) => {
 app.get('/Article', (req, res) => {
   res.render('Article.ejs');
 });
+app.get('/categories', (req, res) => {
+  res.render('categories.ejs');
+});
 
 app.get('/Dashboard', (req, res) => {
   res.render('Dashboard');
