@@ -12,8 +12,11 @@ body{
 
 
 /*********** NarBar ***********/
+body #navbar div:last-child{
+    z-index: 999;
+}
 body #navbar ul li a{
-    color: var(--white);
+    color: var(--black);
     font-weight: bold;
 }
 body #navbar #logo{
@@ -21,6 +24,7 @@ body #navbar #logo{
 }
 body #navbar ul li .active{
     background-color: var(--bleu);
+    color: var(--white);
 }
 /*********** NarBar ***********/
 
@@ -28,7 +32,7 @@ body #navbar ul li .active{
 /*********** Home ***********/
 body #home{
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
 }
 body #home #content{
     width: 100%;
@@ -40,10 +44,13 @@ body #home #content{
     transition: 2s;
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 body #home #content #content_text{
     position: absolute;
-    top: 30vh;
+    top: 22vh;
     font-size: 30px;
 }
 body #home #content #content_text a{
@@ -55,8 +62,6 @@ body #home #content #content_text span{
     color: var(--white);
 }
 body #home #content #content_search{
-    width: 30%;
-    margin-left: 35%;
     position: absolute;
     top: 40vh;
     font-size: 30px;
@@ -65,9 +70,9 @@ body #home #content #content_search input{
     height: 50px;
 }
 body #home #article_tandance{
-    width: 50%;
-    min-height: 40vh;
-    margin-left: 25%;
+    height: 40vh;
+    /* width: 50%; */
+    /* margin-left: 25%; */
     margin-top: -12vh;
     border-radius: 8px;
 }
@@ -82,8 +87,13 @@ body #home #article_tandance #title{
     font-weight: bold;
     text-align: center;
 }
+body #home #article_tandance #categorie{
+    color: var(--black);
+    font-weight: 600;
+    font-size: 18px;
+}
 body #home #article_tandance #discriptions{
-    font-size: 25px;
+    font-size: 15px;
 }
 body #home #article_tandance #lire_suite{
     font-size: 15px;
@@ -94,56 +104,71 @@ body #home #article_tandance #lire_suite{
 /*********** Blog ***********/
 body #blog{
     width: 100%;
-    min-height: 100vh;
 }
-body #blog #sidebar{
-    height: 80vh;
-    background-color: #fff;
+body #blog #sidebar_categorie input[type='radio'][name='buttonCategorie']{
+    display:none;
 }
-body #blog #sidebar #title{
-    font-size: 25px;
-    font-weight: 700;
-    border-bottom: solid 2px var(--black);
-}
-body #blog #sidebar #categorie{
-    width: 90%;
-    height: 30%;
-    background-color: var(--white);
-    border-radius: 8px;
-}
-body #blog #sidebar #categorie div{
-    background-color: var(--bleu);
-    color: var(--black);
-    border: none;
-    padding: 0px 5px;
-    border-radius: 8px;
-}
-body #blog #sidebar #categorie div span{
-    font-size: 18px;
-}
-body #blog #sidebar #categorie div button{
-    font-size: 10px;
-}
-body #blog #sidebar #btn-categorie{
-    width: 90%;
-}
-body #blog #sidebar #btn-categorie .btn{
+body #blog #sidebar_categorie label {
     background-color: var(--white);
     color: var(--bleu);
     font-weight: bold;
     border: solid 1px var(--bleu);
+    text-align:center;
 }
-body #blog #sidebar #btn-categorie .btn:hover{
+body #blog #sidebar_categorie input[type='radio'][name='buttonCategorie']:checked + label {
     background-color: var(--bleu);
     color: var(--white);
-    border: none;
 }
-
-body #blog #content{
-    height: 100%;
-    background-color: var(--black);
+body #blog #content .articles img{
+    height: 200px;
+}
+body #blog #content .articles .title{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+body #blog #content .articles .categorie{
+    font-size: 15px;
+    font-weight: 600;
+}
+body #blog #content .articles .discription{
+    font-size: 15px;
+}
+body #blog #content .articles .lire_suite{
+    font-size: 12px;
 }
 /*********** Blog ***********/
+
+
+/*********** About ***********/
+body #about{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+body #about #title{
+    font-size: 50px;
+    font-weight: bold;
+}
+body #about .card #name{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+}
+body #about .card #discription{
+    font-size: 16px;
+}
+body #about .card #media{
+    font-size: 28px;
+}
+body #about .card #media i:hover{
+    color: var(--bleu);
+}
+/*********** About ***********/
+
 
 /*********** contact ***********/
 body #contact{
@@ -170,10 +195,18 @@ body #contact form textarea{
     min-height: 130px;
 }
 body #contact form button{
+    height: 50px;
     background-color: var(--bleu);
+    color: var(--white);
     border: none;
 }
-/*********** footer css ***********/
-#footer{
+/*********** contact ***********/
+
+
+/*********** Footer ***********/
+body #footer{
+    width: 100%;
+    height: 100%;
     background-color: var(--bleu);
 }
+/*********** Footer ***********/
