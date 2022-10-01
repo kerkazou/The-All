@@ -71,8 +71,6 @@ body #home #content #content_search input{
 }
 body #home #article_tandance{
     height: 40vh;
-    /* width: 50%; */
-    /* margin-left: 25%; */
     margin-top: -12vh;
     border-radius: 8px;
 }
@@ -97,6 +95,9 @@ body #home #article_tandance #discriptions{
 }
 body #home #article_tandance #lire_suite{
     font-size: 15px;
+}
+.bi:hover{
+    color: var(--bleu);
 }
 /*********** Home ***********/
 
@@ -126,6 +127,9 @@ body #blog #content .articles .title{
     font-size: 20px;
     font-weight: bold;
     text-align: center;
+}
+body #blog #content .articles .title a{
+    color: var(--bleu);
 }
 body #blog #content .articles .categorie{
     font-size: 15px;
