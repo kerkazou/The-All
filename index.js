@@ -21,6 +21,9 @@ app.get('/categories', (req, res) => {
 app.get('/commentaires', (req, res) => {
   res.render('commentaires.ejs');
 });
+app.get('/Avis', (req, res) => {
+  res.render('Avis.ejs');
+});
 
 app.get('/Dashboard', (req, res) => {
   res.render('Dashboard');
