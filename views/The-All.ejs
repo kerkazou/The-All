@@ -14,10 +14,10 @@
     
     <!-- NavBar -->
     <div id="navbar">
-        <div class="position-fixed top-0 start-0 p-3">
+        <div class="position-fixed top-0 start-0 p-3" style="z-index: 999;">
             <img src="assets/the_all.png" id="logo" alt="logo">
         </div>
-        <div class="d-flex justify-content-end position-fixed top-0 end-0 p-3">
+        <div class="position-fixed top-0 end-0 d-flex justify-content-end p-3">
             <nav class="navbar navbar-expand-lg navbar-light shadow rounded" id="navbar-example2">
                 <div class="container-fluid d-flex justify-content-end">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,10 +48,23 @@
     <div id="home">
         <!-- Content -->
         <div id="content">
-            <div class="w-100 h4 d-flex justify-content-center align-items-center" id="content_text">
-                var Blog = [ <span>'</span><a href="">Sport</a><span>' , '</span><a href="">Music</a><span>' , '</span><a href="">Cuisine</a><span>' , '</span><a href="">Politique</a><span>' , <a href="">...</a></span>];
+            <div class="w-100 h4 d-md-flex justify-content-center align-items-center px-3" id="content_text">
+                <div>Var Blog = [</div>
+                <div class="d-flex flex-wrap gap-md-2 gap-0">
+                    <span>'</span>
+                    <span><a href="">Sport</a></span>
+                    <span>','</span>
+                    <span><a href="">Music</a></span>
+                    <span>','</span>
+                    <span><a href="">Cuisine</a></span>
+                    <span>','</span>
+                    <span><a href="">Politique</a></span>
+                    <span>',</span>
+                    <span><a href="">...</a></span>
+                </div>
+                <div>]</div>
             </div>
-            <div id="content_search">
+            <div class="col-md-3 col-8" id="content_search">
                 <div class="input-group flex-nowrap">
                     <input type="text" class="form-control" placeholder="Title Of Blog" aria-label="Username" aria-describedby="addon-wrapping">
                     <span class="input-group-text" id="addon-wrapping"><i class="bi bi-search"></i></span>
@@ -59,21 +72,24 @@
             </div>
         </div>
         <!-- Article Tandance -->
-        <div class="col-6 d-flex flex-wrap justify-content-center shadow bg-body position-absolute start-0" id="article_tandance">
-            <div id="image" class="col-md-4 col-12 d-flex justify-content-center align-items-center">
-                <img src="assets/image-article/article1.jpg" alt="article-1">
-            </div>
-            <div id="text" class="col-md-8 col-12 d-flex flex-column justify-content-center gap-md-3 gap-1 px-3">
-                <a href="" id="title">Title</a>
-                <div id="discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam modi sunt vel explicabo doloremque. Qui saepe, repellendus accusantium, ut debitis cupiditate rerum commodi eius ex quibusdam placeat, officia hic soluta.</div>
-                <a href="" id="lire_suite">Lire la suite ...</a>
-                <div id="action">
-                    <div class="float-start" id="action_avis">
-                        <i class="bi bi-hand-thumbs-up h4" type="button"></i>
-                        <i class="bi bi-hand-thumbs-down h4" type="button"></i>
-                    </div>
-                    <div class="float-end" id="action_commentaire">
-                        <i class="bi bi-chat-square-dots h4" type="button"></i>
+        <div class="d-flex justify-content-center">
+            <div class="col-md-6 col-11 position-absolute d-flex justify-content-center shadow bg-body" id="article_tandance">
+                <div id="image" class="col-4 d-flex justify-content-center align-items-center">
+                    <img src="assets/image-article/article1.jpg" alt="article-1">
+                </div>
+                <div id="text" class="col-8 d-flex flex-column justify-content-between px-3">
+                    <a href="" id="title">Title</a>
+                    <div id="categorie">Categorie</div>
+                    <div id="discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam modi sunt vel explicabo doloremque.</div>
+                    <a href="" id="lire_suite">Lire la suite ...</a>
+                    <div id="action">
+                        <div class="float-start" id="action_avis">
+                            <i class="bi bi-hand-thumbs-up btn" type="button"></i>
+                            <i class="bi bi-hand-thumbs-down btn" type="button"></i>
+                        </div>
+                        <div class="float-end" id="action_commentaire">
+                            <i class="bi bi-chat-square-dots btn" type="button"></i>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -81,30 +97,183 @@
     </div>
 
     <!-- Blok -->
-    <div class="d-flex justify-content-center align-items-center px-2" id="blog">
-        <div class="col-3 d-flex flex-column align-items-center gap-4 shadow rounded py-4" id="sidebar">
-            <div id="title">Catégorie</div>
-            <div class="d-flex flex-wrap align-items-center gap-3 shadow border border-2 rounded p-2" id="categorie">
-                <div class="btn btn-primary px-2">
-                    <span>All</span>
-                    <button type="button" class="btn-close" aria-label="Close"></button>
+    <div class="d-flex flex-column justify-content-center align-items-center px-2" id="blog">
+        <div class="col-md-10 col-11 d-flex flex-wrap justify-content-center align-items-center gap-md-4 gap-2 shadow rounded p-4" id="sidebar_categorie">
+            <div><input type="radio" name="buttonCategorie" value="All" id="all"><label class="btn" for="all">All</label></div>
+            <div><input type="radio" name="buttonCategorie" value="Sport" id="sport"><label class="btn" for="sport">Sport</label></div>
+            <div><input type="radio" name="buttonCategorie" value="Music" id="music"><label class="btn" for="music">Music</label></div>
+            <div><input type="radio" name="buttonCategorie" value="Cuisine" id="cuisine"><label class="btn" for="cuisine">Cuisine</label></div>
+            <div><input type="radio" name="buttonCategorie" value="Politique" id="politique"><label class="btn" for="politique">Politique</label></div>
+        </div>
+        <div class="col-md-11 col-12" id="content">
+            <!-- Article -->
+            <div class="d-flex flex-wrap justify-content-center align-items-center p-3">
+                <div class="col-md-3 col-sm-6 col-6 p-2 articles">
+                    <div class="card">
+                        <img class="card-img-top" src="assets/image-article/article1.jpg" alt="article1">
+                        <div class="p-2">
+                            <div class="title">Title</div>
+                            <div class="categorie">Categorie</div>
+                            <div class="discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam modi sunt vel explicabo doloremque.</div>
+                            <a href="" class="lire_suite">Lire la suite ...</a>
+                            <div class="px-2 mt-1" id="action">
+                                <div class="float-start" id="action_avis">
+                                    <i class="bi bi-hand-thumbs-up h4" type="button"></i>
+                                    <i class="bi bi-hand-thumbs-down h4" type="button"></i>
+                                </div>
+                                <div class="float-end" id="action_commentaire">
+                                    <i class="bi bi-chat-square-dots h4" type="button"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-6 p-2 articles">
+                    <div class="card">
+                        <img class="card-img-top" src="assets/image-article/article1.jpg" alt="article1">
+                        <div class="p-2">
+                            <div class="title">Title</div>
+                            <div class="categorie">Categorie</div>
+                            <div class="discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam modi sunt vel explicabo doloremque.</div>
+                            <a href="" class="lire_suite">Lire la suite ...</a>
+                            <div class="px-2 mt-1" id="action">
+                                <div class="float-start" id="action_avis">
+                                    <i class="bi bi-hand-thumbs-up h4" type="button"></i>
+                                    <i class="bi bi-hand-thumbs-down h4" type="button"></i>
+                                </div>
+                                <div class="float-end" id="action_commentaire">
+                                    <i class="bi bi-chat-square-dots h4" type="button"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-6 p-2 articles">
+                    <div class="card">
+                        <img class="card-img-top" src="assets/image-article/article1.jpg" alt="article1">
+                        <div class="p-2">
+                            <div class="title">Title</div>
+                            <div class="categorie">Categorie</div>
+                            <div class="discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam modi sunt vel explicabo doloremque.</div>
+                            <a href="" class="lire_suite">Lire la suite ...</a>
+                            <div class="px-2 mt-1" id="action">
+                                <div class="float-start" id="action_avis">
+                                    <i class="bi bi-hand-thumbs-up h4" type="button"></i>
+                                    <i class="bi bi-hand-thumbs-down h4" type="button"></i>
+                                </div>
+                                <div class="float-end" id="action_commentaire">
+                                    <i class="bi bi-chat-square-dots h4" type="button"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-6 p-2 articles">
+                    <div class="card">
+                        <img class="card-img-top" src="assets/image-article/article1.jpg" alt="article1">
+                        <div class="p-2">
+                            <div class="title">Title</div>
+                            <div class="categorie">Categorie</div>
+                            <div class="discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam modi sunt vel explicabo doloremque.</div>
+                            <a href="" class="lire_suite">Lire la suite ...</a>
+                            <div class="px-2 mt-1" id="action">
+                                <div class="float-start" id="action_avis">
+                                    <i class="bi bi-hand-thumbs-up h4" type="button"></i>
+                                    <i class="bi bi-hand-thumbs-down h4" type="button"></i>
+                                </div>
+                                <div class="float-end" id="action_commentaire">
+                                    <i class="bi bi-chat-square-dots h4" type="button"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-6 p-2 articles">
+                    <div class="card">
+                        <img class="card-img-top" src="assets/image-article/article1.jpg" alt="article1">
+                        <div class="p-2">
+                            <div class="title">Title</div>
+                            <div class="categorie">Categorie</div>
+                            <div class="discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam modi sunt vel explicabo doloremque.</div>
+                            <a href="" class="lire_suite">Lire la suite ...</a>
+                            <div class="px-2 mt-1" id="action">
+                                <div class="float-start" id="action_avis">
+                                    <i class="bi bi-hand-thumbs-up h4" type="button"></i>
+                                    <i class="bi bi-hand-thumbs-down h4" type="button"></i>
+                                </div>
+                                <div class="float-end" id="action_commentaire">
+                                    <i class="bi bi-chat-square-dots h4" type="button"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-6 p-2 articles">
+                    <div class="card">
+                        <img class="card-img-top" src="assets/image-article/article1.jpg" alt="article1">
+                        <div class="p-2">
+                            <div class="title">Title</div>
+                            <div class="categorie">Categorie</div>
+                            <div class="discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam modi sunt vel explicabo doloremque.</div>
+                            <a href="" class="lire_suite">Lire la suite ...</a>
+                            <div class="px-2 mt-1" id="action">
+                                <div class="float-start" id="action_avis">
+                                    <i class="bi bi-hand-thumbs-up h4" type="button"></i>
+                                    <i class="bi bi-hand-thumbs-down h4" type="button"></i>
+                                </div>
+                                <div class="float-end" id="action_commentaire">
+                                    <i class="bi bi-chat-square-dots h4" type="button"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-6 p-2 articles">
+                    <div class="card">
+                        <img class="card-img-top" src="assets/image-article/article1.jpg" alt="article1">
+                        <div class="p-2">
+                            <div class="title">Title</div>
+                            <div class="categorie">Categorie</div>
+                            <div class="discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam modi sunt vel explicabo doloremque.</div>
+                            <a href="" class="lire_suite">Lire la suite ...</a>
+                            <div class="px-2 mt-1" id="action">
+                                <div class="float-start" id="action_avis">
+                                    <i class="bi bi-hand-thumbs-up h4" type="button"></i>
+                                    <i class="bi bi-hand-thumbs-down h4" type="button"></i>
+                                </div>
+                                <div class="float-end" id="action_commentaire">
+                                    <i class="bi bi-chat-square-dots h4" type="button"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="d-flex flex-wrap justify-content-center align-items-center gap-3" id="btn-categorie">
-                <div class="btn btn-primary px-3">Sport</div>
-                <div class="btn btn-primary px-3">Music</div>
-                <div class="btn btn-primary px-3">Cuisine</div>
-                <div class="btn btn-primary px-3">Politique</div>
+        </div>
+    </div>
+
+    <!-- About -->
+    <div id="about">
+        <div class="text-uppercase" id="title">About Us</div>
+        <div class="card col-md-5 col-sm-6 col-11 mt-5">
+            <img class="card-img-top rounded-circle bg-white shadow-1-strong d-flex align-items-center justify-content-center mb-4 mx-auto" style="width: 200px; height: 200px;" src="assets/the_all.png" alt="">
+            <div class="d-flex flex-column justify-content-center align-items-center gap-3 p-2">
+                <div id="name">The All</div>
+                <div class="w-75 text-center" id="discription">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis impedit asperiores expedita enim, itaque facilis mollitia sequi unde sunt velit harum quia dolore a in reiciendis excepturi, ipsam hic quis!</div>
+                <div class="px-2 mt-1" id="media">
+                    <i class="bi bi-facebook" type="button"></i>
+                    <i class="bi bi-instagram" type="button"></i>
+                    <i class="bi bi-youtube" type="button"></i>
+                </div>
             </div>
         </div>
-        <div class="col-9" id="content"></div>
     </div>
     <!--About us-->
     
     <!-- Contact -->
     <div class="d-flex gap-5" id="contact">
         <div class="text-uppercase" id="title">Contact Us</div>
-        <div class="text-center">
+        <div class="w-75 text-center">
             Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within a matter of hours to help you.
         </div>
         <form class="w-75 d-flex flex-column gap-md-5 gap-3" method="POST" action="">
@@ -114,97 +283,98 @@
                         <input class="form-control" name="username" type="text" placeholder="Username">
                     </div>
                     <div class="form-group">
-                        <input class="form-control" name="email" type="email" placeholder="Email" required="">
+                        <input class="form-control" name="email" type="email" placeholder="Email">
                     </div>
                 </div>
                 <div class="col-md-5">
                     <div class="form-group form-group-textarea mb-md-0">
-                        <textarea class="form-control" name="message" placeholder="Message..." required=""></textarea>
+                        <textarea class="form-control" name="message" placeholder="Message..."></textarea>
                     </div>
                 </div>
             </div>
-            <div class="text-center"><button class="btn btn-success btn-xl text-uppercase" type="submit">Send Message</button></div>
+            <div class="text-center"><button class="btn text-uppercase" type="submit">Send Message</button></div>
         </form>
     </div>
+
     <!-- Footer -->
     <footer id="footer" class=" text-center text-lg-start text-white">
-        <div class="container p-4">
-          <div class="row my-4">
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-              <div class="rounded-circle bg-white shadow-1-strong d-flex align-items-center justify-content-center mb-4 mx-auto" style="width: 150px; height: 150px;">
-                <img src="assets/the_all.png" height="70" alt=""
-                     loading="lazy" />
-              </div>
-              <p class="text-center">The importance of blog descriptions may not seem important to you now.</p>
-              <ul class="list-unstyled d-flex flex-row justify-content-center">
-                <li><a class="text-white px-2" href="#!"><i class="bi bi-facebook"></i></a></li>
-                <li><a class="text-white px-2" href="#!"><i class="bi bi-instagram"></i></a></li>
-                <li><a class="text-white ps-2" href="#!"><i class="bi bi-youtube"></i></a></li>
-              </ul>
+      <div class="container p-4">
+        <div class="row my-4">
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <div class="rounded-circle bg-white shadow-1-strong d-flex align-items-center justify-content-center mb-4 mx-auto" style="width: 150px; height: 150px;">
+              <img src="assets/the_all.png" height="70" alt=""
+                   loading="lazy" />
             </div>
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-              <h5 class="text-uppercase mb-4">categorie</h5>
-              <ul class="list-unstyled">
-                <li class="mb-2">
-                  <a href="#!" class="text-white"><i class="bi bi-newspaper"></i> News</a>
-                </li>
-                <li class="mb-2">
-                  <a href="#!" class="text-white"><i class="bi bi-universal-access"></i> Sport</a>
-                </li>
-                <li class="mb-2">
-                  <a href="#!" class="text-white"><i class="bi bi-scissors"></i> Cuisine</a>
-                </li>
-                <li class="mb-2">
-                  <a href="#!" class="text-white"><i class="bi bi-spotify"></i> Music</a>
-                </li>
-                <li class="mb-2">
-                  <a href="#!" class="text-white"><i class="bi bi-bank"></i> Politique</a>
-                </li>
-              </ul>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-              <h5 class="text-uppercase mb-4">More</h5>   
-              <ul class="list-unstyled">
-                <li class="mb-2">
-                  <a href="#!" class="text-white"></i>About Us</a>
-                </li>
-                <li class="mb-2">
-                  <a href="#!" class="text-white"></i>About the Blog's</a>
-                </li>
-                <li class="mb-2">
-                  <a href="#!" class="text-white"></i>Job</a>
-                </li>
-                <li class="mb-2">
-                  <a href="#!" class="text-white"></i>Tenders</a>
-                </li>
-                <li class="mb-2">
-                  <a href="#!" class="text-white"></i>Contact</a>
-                </li>
-              </ul>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-              <h5 class="text-uppercase mb-4">Contact</h5>
-              <ul class="list-unstyled">
-                <li>
-                  <p><i class="bi bi-geo-alt"></i> Youssoufia, 57 Street, Maroc</p>
-                </li>
-                <li>
-                  <p><i class="bi bi-telephone-inbound"></i> +2126-11-84-83-02</p>
-                </li>
-                <li>
-                  <p><i class="bi bi-envelope"></i> contact@example.com</p>
-                </li>
-              </ul>
-            </div>
+            <p class="text-center">The importance of blog descriptions may not seem important to you now.</p>
+            <ul class="list-unstyled d-flex flex-row justify-content-center">
+              <li><a class="text-white px-2" href="#!"><i class="bi bi-facebook"></i></a></li>
+              <li><a class="text-white px-2" href="#!"><i class="bi bi-instagram"></i></a></li>
+              <li><a class="text-white ps-2" href="#!"><i class="bi bi-youtube"></i></a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase mb-4">categorie</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="#!" class="text-white"><i class="bi bi-newspaper"></i> News</a>
+              </li>
+              <li class="mb-2">
+                <a href="#!" class="text-white"><i class="bi bi-universal-access"></i> Sport</a>
+              </li>
+              <li class="mb-2">
+                <a href="#!" class="text-white"><i class="bi bi-scissors"></i> Cuisine</a>
+              </li>
+              <li class="mb-2">
+                <a href="#!" class="text-white"><i class="bi bi-spotify"></i> Music</a>
+              </li>
+              <li class="mb-2">
+                <a href="#!" class="text-white"><i class="bi bi-bank"></i> Politique</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase mb-4">More</h5>   
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="#!" class="text-white"><i class="bi bi-body-text"></i> About Us</a>
+              </li>
+              <li class="mb-2">
+                <a href="#!" class="text-white"><i class="bi bi-body-text"></i> About the Blog's</a>
+              </li>
+              <li class="mb-2">
+                <a href="#!" class="text-white"><i class="bi bi-body-text"></i> Job</a>
+              </li>
+              <li class="mb-2">
+                <a href="#!" class="text-white"><i class="bi bi-body-text"></i> Tenders</a>
+              </li>
+              <li class="mb-2">
+                <a href="#!" class="text-white"><i class="bi bi-body-text"></i> Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase mb-4">Contact</h5>
+            <ul class="list-unstyled">
+              <li>
+                <p><i class="bi bi-geo-alt"></i> Youssoufia, 57 Street, Maroc</p>
+              </li>
+              <li>
+                <p><i class="bi bi-telephone-inbound"></i> +212 6-11-84-83-02</p>
+              </li>
+              <li>
+                <p><i class="bi bi-envelope"></i> contact@example.com</p>
+              </li>
+            </ul>
           </div>
         </div>
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-          © 2022 Copyright:
-          <a class="text-white" href="">The-All.com</a>
-        </div>
-        <!-- Copyright -->
-      </footer>
+      </div>
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2022 Copyright:
+        <a class="text-white" href="">The-All.com</a>
+      </div>
+      <!-- Copyright -->
+
 </body>
 </html>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
