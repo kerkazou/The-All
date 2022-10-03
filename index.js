@@ -31,8 +31,27 @@ app.get('/Profile', (req, res) => {
   res.render('Profile');
 });
 
+app.get('/Articles', (req, res) => {
+  res.render('Articles');
+});
 app.get('/Contacts', (req, res) => {
   res.render('Contacts');
+});
+
+app.get('/Article', (req, res) => {
+  res.render('Article.ejs');
+});
+
+app.get('/categories', (req, res) => {
+  res.render('categories.ejs');
+});
+
+app.get('/commentaires', (req, res) => {
+  res.render('commentaires.ejs');
+});
+
+app.get('/Avis', (req, res) => {
+  res.render('Avis.ejs');
 });
 
 
@@ -44,4 +63,4 @@ app.get('/Contacts', (req, res) => {
 // }
 
 
-app.listen(5000, () => console.log('Server running on http://localhost:${port}'));
+app.listen(5001, () => console.log('Server running on http://localhost:${port}'));

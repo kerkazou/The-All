@@ -9,6 +9,8 @@
         <div class="position-relative w-100">
           <%- include('includs/Navbar_Admin.ejs'); %>
           
+          <div style="height: 6vh;"></div>
+          <!-- Prifile -->
           <div class="col-lg-11 mb-3 mb-sm-5 shadow ms-4">
             <div class="card card-style1 border-0">
               <div class="card-body p-9 p-sm-3 p-md-6 p-lg-7">
@@ -20,26 +22,31 @@
                     <div class="d-lg-inline-block py-2 px-5 px-sm-3 mb-4 col-lg-12 rounded">
                       <span style="color: #38B6FF;" class="fs-2 fw-bold">Edite Profile</span>
                     </div>
-                    <ul class="list-unstyled mb-1-9">
-                      <span class="display-26 text-secondary me-2 font-weight-600 fs-5">First Name:
-                        <input class="mb-2 col-12 mt-2 mb-xl-3 display-28"></span>
-
-                      <span class="display-26 text-secondary me-2 font-weight-600 fs-5">Last Name:
-                        <input class="mb-2 col-12 mt-2 mb-xl-3 display-28"></span>
-
-                      <span class="display-26 text-secondary me-2 font-weight-600 fs-5">Email:
-                        <input class="mb-2 col-12 mt-2 mb-xl-3 display-28"></span>
-
-                      <span class="display-26 text-secondary me-2 font-weight-600 fs-5">Phone:
-                        <input class="mb-2 col-12 mt-2 mb-xl-3 display-28"></span>
-
-                      <span class="display-26 text-secondary me-2 font-weight-600 fs-5">Password:
-                        <input class="mb-2 col-12 mt-2 mb-xl-3 display-28"></span>
-                    </ul>
-                    <div>
-                      <button type="submit" class="btn fs-6 w-25 mb-3"
-                        style="background-color: #38B6FF;">Valider</button>
-                    </div>
+                    <form class="d-flex flex-column gap-3">
+                      <div>
+                        <label for="first_name">First Name :</label>
+                        <input class="form-control" id="first_name" type="text" placeholder="First Name">
+                      </div>
+                      <div>
+                        <label for="first_name">Last Name :</label>
+                        <input class="form-control" id="last_name" type="text" placeholder="Last Name">
+                      </div>
+                      <div>
+                        <label for="first_name">Email :</label>
+                        <input class="form-control" id="email" type="text" placeholder="Email">
+                      </div>
+                      <div>
+                        <label for="first_name">Phone :</label>
+                        <input class="form-control" id="phone" type="text" placeholder="Phone">
+                      </div>
+                      <div>
+                        <label for="first_name">Password :</label>
+                        <input class="form-control" id="password" type="text" placeholder="Password">
+                      </div>
+                      <div>
+                        <input class="btn px-5 py-2" type="submit" id="valider" value="Valider">
+                      </div>
+                    </form>
                   </div>
                 </div>
               </div>
