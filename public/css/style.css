@@ -307,10 +307,26 @@ body #assidBar{
         display: block !important;
     }
 }
+body #assidBar ul li a{
+    width: 240px;
+    color: var(--black);
+}
+body #assidBar ul li:hover{
+    background-color: var(--bleu);
+    border-radius: 8px;
+}
+body #assidBar ul li:hover a{
+    color: var(--white);
+}
 body .active_assidBar {
     background-color: #3498DB;
     border-radius: 50px 0 0 50px;
     width: 226px;
     padding: 6px 0px;
+}
+#valider{
+    background-color: var(--bleu);
+    color: var(--white);
+    border: none;
 }
 /*********** Dashboard ***********/

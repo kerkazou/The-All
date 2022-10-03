@@ -18,18 +18,6 @@ app.get('/', (req, res) => {
 app.get('/The-All', (req, res) => {
   res.render('The-All');
 });
-app.get('/Article', (req, res) => {
-  res.render('Article.ejs');
-});
-app.get('/categories', (req, res) => {
-  res.render('categories.ejs');
-});
-app.get('/commentaires', (req, res) => {
-  res.render('commentaires.ejs');
-});
-app.get('/Avis', (req, res) => {
-  res.render('Avis.ejs');
-});
 
 app.get('/The-All-Article', (req, res) => {
   res.render('The-All-Article');
@@ -39,13 +27,31 @@ app.get('/Dashboard', (req, res) => {
   res.render('Dashboard');
 });
 
-<<<<<<< HEAD
 app.get('/Profile', (req, res) => {
   res.render('Profile');
 });
 
+app.get('/Articles', (req, res) => {
+  res.render('Articles');
+});
 app.get('/Contacts', (req, res) => {
   res.render('Contacts');
+});
+
+app.get('/Article', (req, res) => {
+  res.render('Article.ejs');
+});
+
+app.get('/categories', (req, res) => {
+  res.render('categories.ejs');
+});
+
+app.get('/commentaires', (req, res) => {
+  res.render('commentaires.ejs');
+});
+
+app.get('/Avis', (req, res) => {
+  res.render('Avis.ejs');
 });
 
 
@@ -57,7 +63,5 @@ app.get('/Contacts', (req, res) => {
 // }
 
 
-app.listen(3000, () => console.log('Server running on http://localhost:${port}'));
-=======
-app.listen(5000, () => console.log('Server running on http://localhost:${port}'));
->>>>>>> 3e5a7b6f31a8fc33d3b8e9058d1912d8ac9c3559
+
+app.listen(5001, () => console.log('Server running on http://localhost:${port}'));
