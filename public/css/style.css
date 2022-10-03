@@ -292,11 +292,24 @@ body #footer {
 
 
 /*********** Dashboard ***********/
+/* Assidbar */
+body #assidBar{
+    width: 270px;
+}
+@media screen and (max-width: 1200px) {
+    body #assidBar{
+        position: absolute !important;
+        z-index: 999;
+        display: none !important;
+    }
+    body #btn_assidBar{
+        display: block !important;
+    }
+}
 body .active_assidBar {
     background-color: #3498DB;
     border-radius: 50px 0 0 50px;
     width: 226px;
     padding: 6px 0px;
 }
-
 /*********** Dashboard ***********/

@@ -1,30 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
   <%- include('includs/Head_Admin.ejs'); %>
-</head>
 
-<body>
+
   <div class="position-absolute w-100" style="height: 40vh; background-color: #38B6FF">
     <div class="d-flex gap-3 mx-3" style="height: 100vh;">
-      <%- include('includs/SidBar.ejs'); %>
+      <%- include('includs/SidBar_Admin.ejs'); %>
 
         <div class="position-relative w-100">
-          <nav class="d-flex justify-content-between align-items-center m-3">
-            <div class="h5">
-              <span class="text-black">Page</span>
-              <span class="text-black">/</span>
-              <span class="text-black text-inline">Profil</span>
-            </div>
-            <div class="d-flex flex-row-reverse justify-content-center align-items-center">
-              <button class="border-0 d-none" id="btn_assidBar" style="background-color: #3498DB">
-                <i class="bi bi-menu-button-wide-fill h4 text-white d-none"></i>
-                <i class="bi bi-list h4 text-white" id="icone_menu"></i>
-              </button>
-            </div>
-          </nav>
-
+          <%- include('includs/Navbar_Admin.ejs'); %>
+          
           <div class="col-lg-11 mb-3 mb-sm-5 shadow ms-4">
             <div class="card card-style1 border-0">
               <div class="card-body p-9 p-sm-3 p-md-6 p-lg-7">
@@ -34,7 +18,6 @@
                   </div>
                   <div class="col-lg-6 px-xl-10">
                     <div class="d-lg-inline-block py-2 px-5 px-sm-3 mb-4 col-lg-12 rounded">
-                      <!-- <input class="h2 text-white mb-0 form-control mb-2" value="Abdenacer Sandali"> -->
                       <span style="color: #38B6FF;" class="fs-2 fw-bold">Edite Profile</span>
                     </div>
                     <ul class="list-unstyled mb-1-9">
@@ -57,12 +40,6 @@
                       <button type="submit" class="btn fs-6 w-25 mb-3"
                         style="background-color: #38B6FF;">Valider</button>
                     </div>
-                    <!-- <ul class="social-icon-style1 d-flex gap-3 fs-5 list-unstyled mb-0 ps-0">
-                    <li><a href="#!"><i class="bi bi-twitter text-dark"></i></a></li>
-                    <li><a href="#!"><i class="bi bi-facebook text-dark"></i></a></li>
-                    <li><a href="#!"><i class="bi bi-pinterest text-dark"></i></a></li>
-                    <li><a href="#!"><i class="bi bi-instagram text-dark"></i></a></li>
-                  </ul> -->
                   </div>
                 </div>
               </div>
@@ -71,6 +48,3 @@
         </div>
 
         <%- include('includs/Footer_Admin.ejs'); %>
-</body>
-
-</html>
