@@ -9,16 +9,9 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <link href="css/style.css" rel="stylesheet" type="text/css">
   <title>Article</title>
 </head>
-<style>
-  body .active_assidBar {
-    background-color: #3498DB;
-    border-radius: 50px 0 0 50px;
-    width: 226px;
-    padding: 6px 0px;
-  }
-</style>
 
 <body>
   <div class="position-absolute w-100" style="height: 40vh; background-color: #38B6FF">
@@ -33,15 +26,10 @@
           <hr class="w-75 m-0 my-2 p-0 text-white">
           <!-- Info Profile -->
           <div class="d-flex flex-column text-center justify-content-center align-items-center py-2 gap-1">
-            <!-- <a href="Dashboard"><img class="rounded-circle" src="assets/the_all.png" style="width: 60%;" alt="avatar"></a> -->
             <span class="fs-4 pt-3 fw-bold test-center" style="color:#38B6FF;">Abdenacer Sandali</span>
             <div class="d-flex flex-column justify-content-center align-items-center py-2 gap-1">
-              <!-- <span class="fs-5 pt-2 " style="color: #222;">Admin</span> -->
-              <!-- <hr class="w-100 m-0 p-0"> -->
             </div>
             <div>
-
-
               <ul
                 class="navbar-nav d-flex flex-column justify-content-center align-items-center my-2 gap-md-4 gap-sm-3 gap-1">
                 <li class="nav-item text-center">
@@ -109,7 +97,6 @@
                         </form>                        
                     </div>
                 </div>
-
                 <table class="table table-sm table-responsive text-center rounded">
                     <thead>
                       <tr>
@@ -120,7 +107,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr >
+                      <tr>
                           <td>Amet</td>
                           <td>Sit</td>
                           <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</td>
@@ -147,15 +134,11 @@
                               <button class="btn btn-light"><i class="bi bi-x-octagon-fill fs-4 " style="color:red;"></i></button>                   
                           </td>
                       </tr>
-                  
                     </tbody>
                 </table>
             </div>
         </div>
       </div>
-
-
-
     </div>
     
   </div>
@@ -172,21 +155,17 @@
             <form>
                 <!-- Name input -->
                 <div class="form-outline mb-3">
-                    <label class="form-label" for="form4Example1"><strong>Title</strong></label>
+                  <label class="form-label" for="form4Example1"><strong>Title</strong></label>
                   <input type="text" id="form4Example1" class="form-control" />
                 </div>
-              
                 <!-- Email input -->
                 <div class="form-outline mb-3">
-                    <label class="form-label" for="form4Example2"><strong>Image</strong></label>
-
+                  <label class="form-label" for="form4Example2"><strong>Image</strong></label>
                   <input type="email" id="form4Example2" class="form-control" />
                 </div>
-              
                 <!-- Message input -->
                 <div class="form-outline mb-3">
                     <label class="form-label" for="form4Example3"><strong>discription</strong></label>
-
                   <textarea class="form-control" id="form4Example3" rows="4"></textarea>
                 </div>
                 <div class="modal-footer">
@@ -195,7 +174,6 @@
                   </div>
               </form>
         </div>
-        
       </div>
     </div>
   </div>
@@ -211,60 +189,36 @@
             <form>
                 <!-- Name input -->
                 <div class="form-outline mb-3">
-                    <label class="form-label" for="form4Example1"><strong>Title</strong></label>
+                  <label class="form-label" for="form4Example1"><strong>Title</strong></label>
                   <input type="text" id="form4Example1" class="form-control" />
                 </div>
-              
                 <!-- Email input -->
                 <div class="form-outline mb-3">
-                    <label class="form-label" for="form4Example2"><strong>Image</strong></label>
-
+                  <label class="form-label" for="form4Example2"><strong>Image</strong></label>
                   <input type="email" id="form4Example2" class="form-control" />
                 </div>
-              
                 <!-- Message input -->
                 <div class="form-outline mb-3">
-                    <label class="form-label" for="form4Example3"><strong>discription</strong></label>
-
+                  <label class="form-label" for="form4Example3"><strong>discription</strong></label>
                   <textarea class="form-control" id="form4Example3" rows="4"></textarea>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn fw-bold" style="background: #4ba7ed;">Modifier </button>
-                  </div>
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn fw-bold" style="background: #4ba7ed;">Modifier </button>
+                </div>
               </form>
         </div>
-        
       </div>
     </div>
   </div>
 
-  <script>
-    //AssidBar
-    const assidBar = document.getElementById('assidBar');
-    const btn_assidBar = document.getElementById('btn_assidBar');
-    const icone_menu = document.getElementById('icone_menu');
-    btn_assidBar.onclick = function () {
-      if (icone_menu.classList.contains('bi-list')) {
-        icone_menu.classList.remove('bi-list');
-        icone_menu.classList.add('bi-x-lg');
-        assidBar.style.removeProperty('display');
-        assidBar.setAttribute("style", "display: block !important;");
-        assidBar.classList.remove('d-none');
-        assidBar.classList.add('d-block');
-      } else {
-        icone_menu.classList.remove('bi-x-lg');
-        icone_menu.classList.add('bi-list');
-        assidBar.style.removeProperty('display');
-        assidBar.setAttribute("style", "display: none !important;");
-      }
-    }
-  </script>
+
+  <script src="js/script.js"></script>
+  <!-- script bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+
 </body>
 
 </html>

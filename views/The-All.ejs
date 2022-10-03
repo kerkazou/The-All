@@ -1,48 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <link href="css/style.css" rel="stylesheet" type="text/css">
-    <link rel="icon" type="image/x-icon" href="assets/the_all.png">
-    <title>The All</title>
-</head>
-<body data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
+
+    <%- include('includs/Head.ejs') %>
+
     
     <!-- NavBar -->
-    <div id="navbar">
-        <div class="position-fixed top-0 start-0 p-3" style="z-index: 999;">
-            <img src="assets/the_all.png" id="logo" alt="logo">
-        </div>
-        <div class="position-fixed top-0 end-0 d-flex justify-content-end p-3">
-            <nav class="navbar navbar-expand-lg navbar-light shadow rounded" id="navbar-example2">
-                <div class="container-fluid d-flex justify-content-end">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse text-center" id="navbarNavDropdown">
-                        <ul class="navbar-nav nav nav-pills gap-md-5">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#home">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#blog">Bloks</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#about">About</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#contact">Contact</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </div>
+    <%- include('includs/NavBar.ejs') %>
 
     <!-- Home -->
     <div id="home">
@@ -52,15 +13,15 @@
                 <div>Var Blog = [</div>
                 <div class="d-flex flex-wrap gap-md-2 gap-0">
                     <span>'</span>
-                    <span><a href="">Sport</a></span>
+                    <span><a href="#blog">Sport</a></span>
                     <span>','</span>
-                    <span><a href="">Music</a></span>
+                    <span><a href="#blog">Music</a></span>
                     <span>','</span>
-                    <span><a href="">Cuisine</a></span>
+                    <span><a href="#blog">Cuisine</a></span>
                     <span>','</span>
-                    <span><a href="">Politique</a></span>
+                    <span><a href="#blog">Politique</a></span>
                     <span>',</span>
-                    <span><a href="">...</a></span>
+                    <span><a href="#blog">...</a></span>
                 </div>
                 <div>]</div>
             </div>
@@ -78,10 +39,10 @@
                     <img src="assets/image-article/article1.jpg" alt="article-1">
                 </div>
                 <div id="text" class="col-8 d-flex flex-column justify-content-between px-3">
-                    <a href="" id="title">Title</a>
+                    <a href="The-All-Article?Article=0" id="title">Title</a>
                     <div id="categorie">Categorie</div>
                     <div id="discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam modi sunt vel explicabo doloremque.</div>
-                    <a href="" id="lire_suite">Lire la suite ...</a>
+                    <a href="The-All-Article?Article=0" id="lire_suite">Lire la suite ...</a>
                     <div id="action">
                         <div class="float-start" id="action_avis">
                             <i class="bi bi-hand-thumbs-up h4" type="button"></i>
@@ -112,10 +73,10 @@
                     <div class="card">
                         <img class="card-img-top" src="assets/image-article/article1.jpg" alt="article1">
                         <div class="p-2">
-                            <div class="title"><a href="">Title</a></div>
+                            <div class="title"><a href="The-All-Article?Article=1">Title</a></div>
                             <div class="categorie">Categorie</div>
                             <div class="discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam modi sunt vel explicabo doloremque.</div>
-                            <a href="" class="lire_suite">Lire la suite ...</a>
+                            <a href="The-All-Article?Article=1" class="lire_suite">Lire la suite ...</a>
                             <div class="px-2 mt-1" id="action">
                                 <div class="float-start" id="action_avis">
                                     <i class="bi bi-hand-thumbs-up h4" type="button"></i>
@@ -132,10 +93,10 @@
                     <div class="card">
                         <img class="card-img-top" src="assets/image-article/article1.jpg" alt="article1">
                         <div class="p-2">
-                            <div class="title"><a href="">Title</a></div>
+                            <div class="title"><a href="The-All-Article?Article=2">Title</a></div>
                             <div class="categorie">Categorie</div>
                             <div class="discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam modi sunt vel explicabo doloremque.</div>
-                            <a href="" class="lire_suite">Lire la suite ...</a>
+                            <a href="The-All-Article?Article=2" class="lire_suite">Lire la suite ...</a>
                             <div class="px-2 mt-1" id="action">
                                 <div class="float-start" id="action_avis">
                                     <i class="bi bi-hand-thumbs-up h4" type="button"></i>
@@ -152,10 +113,10 @@
                     <div class="card">
                         <img class="card-img-top" src="assets/image-article/article1.jpg" alt="article1">
                         <div class="p-2">
-                            <div class="title"><a href="">Title</a></div>
+                            <div class="title"><a href="The-All-Article?Article=3">Title</a></div>
                             <div class="categorie">Categorie</div>
                             <div class="discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam modi sunt vel explicabo doloremque.</div>
-                            <a href="" class="lire_suite">Lire la suite ...</a>
+                            <a href="The-All-Article?Article=3" class="lire_suite">Lire la suite ...</a>
                             <div class="px-2 mt-1" id="action">
                                 <div class="float-start" id="action_avis">
                                     <i class="bi bi-hand-thumbs-up h4" type="button"></i>
@@ -172,10 +133,10 @@
                     <div class="card">
                         <img class="card-img-top" src="assets/image-article/article1.jpg" alt="article1">
                         <div class="p-2">
-                            <div class="title"><a href="">Title</a></div>
+                            <div class="title"><a href="The-All-Article?Article=4">Title</a></div>
                             <div class="categorie">Categorie</div>
                             <div class="discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam modi sunt vel explicabo doloremque.</div>
-                            <a href="" class="lire_suite">Lire la suite ...</a>
+                            <a href="The-All-Article?Article=4" class="lire_suite">Lire la suite ...</a>
                             <div class="px-2 mt-1" id="action">
                                 <div class="float-start" id="action_avis">
                                     <i class="bi bi-hand-thumbs-up h4" type="button"></i>
@@ -192,10 +153,10 @@
                     <div class="card">
                         <img class="card-img-top" src="assets/image-article/article1.jpg" alt="article1">
                         <div class="p-2">
-                            <div class="title"><a href="">Title</a></div>
+                            <div class="title"><a href="The-All-Article?Article=5">Title</a></div>
                             <div class="categorie">Categorie</div>
                             <div class="discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam modi sunt vel explicabo doloremque.</div>
-                            <a href="" class="lire_suite">Lire la suite ...</a>
+                            <a href="The-All-Article?Article=5" class="lire_suite">Lire la suite ...</a>
                             <div class="px-2 mt-1" id="action">
                                 <div class="float-start" id="action_avis">
                                     <i class="bi bi-hand-thumbs-up h4" type="button"></i>
@@ -212,30 +173,10 @@
                     <div class="card">
                         <img class="card-img-top" src="assets/image-article/article1.jpg" alt="article1">
                         <div class="p-2">
-                            <div class="title"><a href="">Title</a></div>
+                            <div class="title"><a href="The-All-Article?Article=6">Title</a></div>
                             <div class="categorie">Categorie</div>
                             <div class="discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam modi sunt vel explicabo doloremque.</div>
-                            <a href="" class="lire_suite">Lire la suite ...</a>
-                            <div class="px-2 mt-1" id="action">
-                                <div class="float-start" id="action_avis">
-                                    <i class="bi bi-hand-thumbs-up h4" type="button"></i>
-                                    <i class="bi bi-hand-thumbs-down h4" type="button"></i>
-                                </div>
-                                <div class="float-end" id="action_commentaire">
-                                    <i class="bi bi-chat-square-dots h4" type="button"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-6 p-2 articles">
-                    <div class="card">
-                        <img class="card-img-top" src="assets/image-article/article1.jpg" alt="article1">
-                        <div class="p-2">
-                            <div class="title"><a href="">Title</a></div>
-                            <div class="categorie">Categorie</div>
-                            <div class="discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam modi sunt vel explicabo doloremque.</div>
-                            <a href="" class="lire_suite">Lire la suite ...</a>
+                            <a href="The-All-Article?Article=6" class="lire_suite">Lire la suite ...</a>
                             <div class="px-2 mt-1" id="action">
                                 <div class="float-start" id="action_avis">
                                     <i class="bi bi-hand-thumbs-up h4" type="button"></i>
@@ -307,57 +248,4 @@
         </form>
     </div>
 
-    <!-- Footer -->
-    <footer id="footer" class="text-lg-start text-white">
-        <div class="container p-4">
-          <div class="row d-flex justify-content-center align-items-center">
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-              <div class="rounded-circle bg-white shadow-1-strong d-flex align-items-center justify-content-center mb-4 mx-auto" style="width: 150px; height: 150px;">
-                <img src="assets/the_all.png" height="70" alt="Logo" loading="lazy"/>
-              </div>
-              <p class="text-center">The importance of blog descriptions may not seem important to you now.</p>
-              <ul class="list-unstyled d-flex flex-row justify-content-center h4">
-                <li><a class="text-white px-2" href="#!"><i class="bi bi-facebook"></i></a></li>
-                <li><a class="text-white px-2" href="#!"><i class="bi bi-instagram"></i></a></li>
-                <li><a class="text-white ps-2" href="#!"><i class="bi bi-youtube"></i></a></li>
-              </ul>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-              <h5 class="text-uppercase mb-2">Categorie</h5>
-              <ul class="list-unstyled">
-                <li><a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>News</a></li>
-                <li><a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Sport</a></li>
-                <li><a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Cuisine</a></li>
-                <li><a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Music</a></li>
-                <li><a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Politique</a></li>
-              </ul>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-              <h5 class="text-uppercase mb-2">More</h5>   
-              <ul class="list-unstyled">
-                <li><a href="#" class="text-white"><i class="fas fa-paw pe-3"></i>About Us</a></li>
-                <li><a href="#" class="text-white"><i class="fas fa-paw pe-3"></i>About the Blog's</a></li>
-                <li><a href="#" class="text-white"><i class="fas fa-paw pe-3"></i>Job</a></li>
-                <li><a href="#" class="text-white"><i class="fas fa-paw pe-3"></i>Tenders</a></li>
-                <li><a href="#" class="text-white"><i class="fas fa-paw pe-3"></i>Contact</a></li>
-              </ul>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                <h5 class="text-uppercase mb-2">Contact</h5>
-                <ul class="list-unstyled">
-                    <li><a><i class="fas fa-map-marker-alt pe-3"></i>Youssoufia, 57 Street, Maroc</a></li>
-                    <li><a><i class="fas fa-phone pe-3"></i>+212611848302</a></li>
-                    <li><a><i class="fas fa-envelope pe-3"></i>contact@example.com</a></li>
-                </ul>
-            </div>
-          </div>
-        </div>
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-          © 2022 Copyright:
-          <a class="text-white" href="#">The-All.com</a>
-        </div>
-    </footer>
-
-</body>
-</html>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <%- include('includs/Footer.ejs') %>

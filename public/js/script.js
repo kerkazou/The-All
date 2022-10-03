@@ -17,3 +17,14 @@ btn_assidBar.onclick = function () {
     assidBar.setAttribute("style", "display: none !important;");
   }
 }
+
+
+// Add Commontaire
+function addCommontaire1(){
+  const add_commontaire1 = document.getElementById('add_commontaire1');
+  add_commontaire1.style.display = 'flex';
+}
+function addCommontaire2(){
+  const add_commontaire2 = document.getElementById('add_commontaire2');
+  add_commontaire2.style.display = 'flex';
+}
