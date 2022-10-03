@@ -1,29 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
   <%- include('includs/Head_Admin.ejs'); %>
-</head>
 
-<body>
   <div class="position-absolute w-100" style="height: 40vh; background-color: #38B6FF">
     <div class="d-flex gap-3 mx-3" style="height: 100vh;">
-      <%- include('includs/SidBar.ejs'); %>
+      <%- include('includs/SidBar_Admin.ejs'); %>
 
         <!-- Navbar -->
         <div class="position-relative w-100 ">
-          <nav class="d-flex justify-content-between align-items-center m-3 text-dark fs-2">
-            <div class="h5">
-              <span class="text-black">Page</span>
-              <span class="text-black">/</span>
-              <span class="text-black text-inline">Dashboard</span>
-            </div>
-            <div class="d-flex flex-row-reverse justify-content-center align-items-center">
-              <button class="border-0 d-md-none d-block" id="btn_assidBar" style="background-color: #3498DB">
-                <i class="bi bi-list h4 text-white" id="icone_menu"></i>
-              </button>
-            </div>
-          </nav>
+          <%- include('includs/Navbar_Admin.ejs'); %>
 
           <!-- Statistiques -->
           <div class="container-fluid pb-3">
@@ -81,7 +65,3 @@
   </div>
 
   <%- include('includs/Footer_Admin.ejs'); %>
-
-</body>
-
-</html>
