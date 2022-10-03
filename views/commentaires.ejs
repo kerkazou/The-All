@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../public/css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <title>commentaires</title>
+</head>
+<style>
+  body .active_assidBar {
+    background-color: #3498DB;
+    border-radius: 50px 0 0 50px;
+    width: 226px;
+    padding: 6px 0px;
+  }
+</style>
+
+<body>
+  <div class="position-absolute w-100" style="height: 40vh; background-color: #38B6FF">
+    <div class="d-flex gap-3 mx-3" style="height: 100vh;">
+      <div class="col-2 position-relative" id="assidBar">
+        <aside class="d-flex flex-column align-items-center shadow" id="assidbar"
+          style="height: 96vh; margin-top: 2vh; background-color: #fff; border-radius: 16px;">
+          <!-- Logo -->
+          <div class="d-flex justify-content-center align-items-center ">
+            <img src="assets/the_all.png" style="width: 60%; padding-top: 20px;" alt="logo">
+          </div>
+          <hr class="w-75 m-0 my-2 p-0 text-white">
+          <!-- Info Profile -->
+          <div class="d-flex flex-column text-center justify-content-center align-items-center py-2 gap-1">
+            <!-- <a href="Dashboard"><img class="rounded-circle" src="assets/the_all.png" style="width: 60%;" alt="avatar"></a> -->
+            <span class="fs-4 pt-3 fw-bold test-center" style="color:#38B6FF;">soumia</span>
+            <div class="d-flex flex-column justify-content-center align-items-center py-2 gap-1">
+              <!-- <span class="fs-5 pt-2 " style="color: #222;">Admin</span> -->
+              <!-- <hr class="w-100 m-0 p-0"> -->
+            </div>
+            <div>
+
+
+              <ul
+                class="navbar-nav d-flex flex-column justify-content-center align-items-center my-2 gap-md-4 gap-sm-3 gap-1">
+                <li class="nav-item text-center">
+                  <a class="nav-link" href="Dashboard">
+                    <span class="fs-5 text-dark">Dashboard</span>
+                  </a>
+                </li>
+                <li class="nav-item text-center ">
+                  <a class="nav-link" href="Profil">
+                    <span class="fs-5 text-dark">Profil</span>
+                  </a>
+                </li>
+                <li class="nav-item text-center">
+                  <a class="nav-link" href="Articles">
+                    <span class="fs-5 text-dark">Articles</span>
+                  </a>
+                </li>
+                <li class="nav-item text-center ">
+                  <a class="nav-link" href="Categories">
+                    <span class="fs-5 text-dark">Categories</span>
+                  </a>
+                </li>
+                <li class="nav-item text-center ">
+                  <a class="nav-link" href="Commentaire">
+                    <span class="fs-5 text-dark">Commentaire</span>
+                  </a>
+                </li>
+                <li class="nav-item text-center">
+                  <a class="nav-link" href="Contact">
+                    <span class="fs-5 text-dark">Contact</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- Logout -->
+            <hr class="w-75 m-0 p-0">
+            <div class="d-flex" style="bottom: 0;">
+              <a class="nav-link" href="logout"><span class="text-dark fs-5" style="color: #222;">Logout</span></a>
+            </div>
+        </aside>
+      </div>
+
+      <div class="position-relative w-100 ">
+        <nav class="d-flex justify-content-between align-items-center m-4">
+          <div class="h5">
+            <span class="text-black">Page</span>
+            <span class="text-black">/</span>
+            <span class="text-black text-inline">commentaires</span>
+          </div>
+          <div class="d-flex flex-row-reverse justify-content-center align-items-center">
+            <button class="border-0 d-none" id="btn_assidBar" style="background-color: #3498DB">
+              <i class="bi bi-menu-button-wide-fill h4 text-white d-none"></i>
+              <i class="bi bi-list h4 text-white" id="icone_menu"></i>
+            </button>
+          </div>
+        </nav>
+
+        <!-- les commentaires -->
+        <div class=" bg-light w-100 commentaires  " style="height: 80vh; ">
+            <div class="bg-body shadow">
+                <div class="d-flex justify-content-between pt-3 p-3 bg-light">
+                    <div>
+                        <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        </form>
+                                                   
+                    </div>
+                    
+                </div>
+                <table class="table table-sm ">
+                    <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">commentateur</th>
+                        <th scope="col">nom d'article</th>
+                        <th scope="col">commentaires</th>
+                        <th scope="col">Options</th>
+                    </tr>
+                    </thead>
+                    <tbody >
+                    <tr>
+                        <td>1</td>
+                        <td>Amet</td>
+                        <td>Amet</td>
+                        <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</td>
+                        <td>
+                            <button class="btn" data-bs-toggle="modal" data-bs-target="#edite" ><i class="bi bi-pencil-square fs-4 " style="color: rgb(9, 187, 98);;"></i></button>
+                            <button class="btn"><i class="bi bi-x-octagon-fill fs-4 " style="color:red;"></i></button>                   
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Amet</td>
+                        <td>Amet</td>
+                        <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</td>
+                        <td>
+                            <button class="btn" data-bs-toggle="modal" data-bs-target="#edite" ><i class="bi bi-pencil-square fs-4 " style="color: rgb(9, 187, 98);;"></i></button>
+                            <button class="btn"><i class="bi bi-x-octagon-fill fs-4 " style="color:red;"></i></button>                   
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Amet</td>
+                        <td>Amet</td>
+                        <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</td>
+                        <td>
+                            <button class="btn" data-bs-toggle="modal" data-bs-target="#edite" ><i class="bi bi-pencil-square fs-4 " style="color: rgb(9, 187, 98);;"></i></button>
+                            <button class="btn"><i class="bi bi-x-octagon-fill fs-4 " style="color:red;"></i></button>                   
+                        </td>
+                    </tr>
+                  
+                    </tbody>
+                </table>
+            </div>
+        </div>
+      </div>
+
+
+
+    </div>
+    
+  </div>
+  </div>
+  
+  <!-- modal update -->
+  <div class="modal fade "  id="edite_commentair" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content " >
+        <div class="modal-header  " style="background: #4ba7ed;">
+          <h5 class="modal-title" id="edite_commentair">Modifier commentaires</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body ">
+            <form>  
+                <!-- commentaires input -->
+                <div class="form-outline mb-3">
+                    <label class="form-label"><strong>commentaires</strong></label>
+                  <textarea class="form-control" id="commentaires" rows="4"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn fw-bold" style="background: #4ba7ed;">Modifier </button>
+                  </div>
+              </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <script>
+    //AssidBar
+    const assidBar = document.getElementById('assidBar');
+    const btn_assidBar = document.getElementById('btn_assidBar');
+    const icone_menu = document.getElementById('icone_menu');
+    btn_assidBar.onclick = function () {
+      if (icone_menu.classList.contains('bi-list')) {
+        icone_menu.classList.remove('bi-list');
+        icone_menu.classList.add('bi-x-lg');
+        assidBar.style.removeProperty('display');
+        assidBar.setAttribute("style", "display: block !important;");
+        assidBar.classList.remove('d-none');
+        assidBar.classList.add('d-block');
+      } else {
+        icone_menu.classList.remove('bi-x-lg');
+        icone_menu.classList.add('bi-list');
+        assidBar.style.removeProperty('display');
+        assidBar.setAttribute("style", "display: none !important;");
+      }
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+</body>
+
+</html>
