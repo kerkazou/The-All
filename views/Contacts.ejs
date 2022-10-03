@@ -1,0 +1,148 @@
+
+  <%- include('includs/Head_Admin.ejs'); %>
+
+
+  <div class="position-absolute w-100" style="height: 40vh; background-color: #38B6FF">
+    <div class="d-flex gap-3 mx-3" style="height: 100vh;">
+      <%- include('includs/SidBar_Admin.ejs'); %>
+      
+        <div class="position-relative w-100">
+          <%- include('includs/Navbar_Admin.ejs'); %>
+          
+          <div style="height: 6vh;"></div>
+          <!-- les article -->
+          <div class="bg-body w-100" style="height: 80vh;">
+            <div class="shadow">
+              <div class="d-flex justify-content-center py-4 p-3 bg-light">
+                <div class="col-lg-3">
+                  <div class="d-flex">
+                    <input class="form-control me-2 shadow-none p-2" type="search" placeholder="Search" aria-label="Search">
+                  </div>
+                </div>
+              </div>
+              <table class="table table-sm table-responsive text-center">
+                <thead>
+                  <tr>
+                    <th class="col-2">Name</th>
+                    <th class="col-3">Email</th>
+                    <th class="col-5">Message</th>
+                    <th class="col-2"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Amet</td>
+                    <td>Sit</td>
+                    <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</td>
+                    <td>
+                      <button class="btn" data-bs-toggle="modal" data-bs-target="#edite"><i
+                          class="bi bi-pencil-square fs-4 " style="color: rgb(9, 187, 98);;"></i></button>
+                      <button class="btn"><i class="bi bi-x-octagon-fill fs-4 " style="color:red;"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Amet</td>
+                    <td>Adipisicing</td>
+                    <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</td>
+                    <td>
+                      <button class="btn" data-bs-toggle="modal" data-bs-target="#edite"><i
+                          class="bi bi-pencil-square fs-4 " style="color: rgb(9, 187, 98);;"></i></button>
+                      <button class="btn"><i class="bi bi-x-octagon-fill fs-4 " style="color:red;"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Amet</td>
+                    <td>Hic</td>
+                    <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</td>
+                    <td>
+                      <button class="btn" data-bs-toggle="modal" data-bs-target="#edite"><i
+                          class="bi bi-pencil-square fs-4 " style="color: rgb(9, 187, 98);;"></i></button>
+                      <button class="btn btn-light"><i class="bi bi-x-octagon-fill fs-4 "
+                          style="color:red;"></i></button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  </div>
+
+
+
+  
+  <!-- modal add -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content ">
+        <div class="modal-header" style="background: #4ba7ed;">
+          <h5 class="modal-title" id="staticBackdropLabel">Ajouter Article</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <!-- Name input -->
+            <div class="form-outline mb-3">
+              <label class="form-label" for="form4Example1"><strong>Title</strong></label>
+              <input type="text" id="form4Example1" class="form-control" />
+            </div>
+            <!-- Email input -->
+            <div class="form-outline mb-3">
+              <label class="form-label" for="form4Example2"><strong>Image</strong></label>
+              <input type="email" id="form4Example2" class="form-control" />
+            </div>
+            <!-- Message input -->
+            <div class="form-outline mb-3">
+              <label class="form-label" for="form4Example3"><strong>discription</strong></label>
+              <textarea class="form-control" id="form4Example3" rows="4"></textarea>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn fw-bold" style="background: #4ba7ed;">Ajouter </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- modal update -->
+  <div class="modal fade " id="edite" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content ">
+        <div class="modal-header  " style="background: #4ba7ed;">
+          <h5 class="modal-title" id="edite">Modifier Article</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body ">
+          <form>
+            <!-- Name input -->
+            <div class="form-outline mb-3">
+              <label class="form-label" for="form4Example1"><strong>Title</strong></label>
+              <input type="text" id="form4Example1" class="form-control" />
+            </div>
+            <!-- Email input -->
+            <div class="form-outline mb-3">
+              <label class="form-label" for="form4Example2"><strong>Image</strong></label>
+              <input type="email" id="form4Example2" class="form-control" />
+            </div>
+            <!-- Message input -->
+            <div class="form-outline mb-3">
+              <label class="form-label" for="form4Example3"><strong>discription</strong></label>
+              <textarea class="form-control" id="form4Example3" rows="4"></textarea>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn fw-bold" style="background: #4ba7ed;">Modifier </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <%- include('includs/Footer_Admin.ejs'); %>

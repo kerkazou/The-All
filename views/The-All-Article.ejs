@@ -1,0 +1,91 @@
+
+  <%- include('includs/Head.ejs') %>
+
+    <!-- NavBar -->
+    <%- include('includs/NavBar.ejs') %>
+
+    <!-- Affichage Article -->
+    <div class="container d-flex justify-content-center" id="affichage_article">
+        <div class="col-5 d-md-flex d-none flex-column align-items-center gap-3">
+          <img class="w-75" src="assets/image-article/article1.jpg" alt="">
+          <div class="w-75 d-flex justify-content-between">
+            <div class="float-start">
+                <i class="bi bi-hand-thumbs-up h4" type="button"></i>
+                <i class="bi bi-hand-thumbs-down h4" type="button"></i>
+            </div>
+            <div class="float-end">
+              <i class="bi bi-chat-square-dots h4" onclick="addCommontaire1()" type="button"></i>
+            </div>
+          </div>
+          <div class="w-75 commentaire gap-3 rounded p-3 shadow-sm" id="add_commontaire1">
+            <input class="form-control" type="text" placeholder="UserName">
+            <input class="form-control" type="text" placeholder="Email">
+            <textarea cols="30" rows="10" placeholder="Message..." style="max-height: 80px;"></textarea>
+            <input class="btn btn-primary w-25" type="submit" value="Send">
+          </div>
+        </div>
+        <div class="col-md-7 col-11 d-flex flex-column gap-3">
+          <div class="text-start" id="title">Title</div>
+          <div class="d-md-none d-flex flex-column justify-content-center align-items-center gap-3">
+            <img class="w-100" src="assets/image-article/article1.jpg" alt="">
+            <div class="w-100 d-flex justify-content-between">
+              <div class="float-start">
+                  <i class="bi bi-hand-thumbs-up h4" type="button"></i>
+                  <i class="bi bi-hand-thumbs-down h4" type="button"></i>
+              </div>
+              <div class="float-end">
+                <i class="bi bi-chat-square-dots h4" onclick="addCommontaire2()" type="button"></i>
+              </div>
+            </div>
+            <div class="w-100 commentaire gap-3 rounded p-3 shadow-sm" id="add_commontaire2">
+              <input class="form-control" type="text" placeholder="UserName">
+              <input class="form-control" type="text" placeholder="Email">
+              <textarea cols="30" rows="10" placeholder="Message..." style="max-height: 80px;"></textarea>
+              <input class="btn btn-primary w-25" type="submit" value="Send">
+            </div>
+          </div>
+          <div id="discription">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, incidunt, 
+            mollitia fuga optio enim exercitationem eveniet officiis tempore ducimus aliquam animi, 
+            libero autem. Sit facilis reiciendis, quia error assumenda quo.
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, incidunt, 
+            mollitia fuga optio enim exercitationem eveniet officiis tempore ducimus aliquam animi, 
+            libero autem. Sit facilis reiciendis, quia error assumenda quo.
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, incidunt, 
+            mollitia fuga optio enim exercitationem eveniet officiis tempore ducimus aliquam animi, 
+            libero autem. Sit facilis reiciendis, quia error assumenda quo.
+          </div>
+          <div class="d-flex flex-column gap-2" id="commentaires">
+            <div class="commentaire d-flex flex-column gap-3 rounded px-3 shadow-sm py-2">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="username">UserName</div>
+                <div class="date">Date</div>
+              </div>
+              <div class="text px-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, accusantium. Quasi itaque qui ducimus.</div>
+            </div>
+            <div class="commentaire d-flex flex-column gap-3 rounded px-3 shadow-sm py-2">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="username">UserName</div>
+                <div class="date">Date</div>
+              </div>
+              <div class="text px-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, accusantium. Quasi itaque qui ducimus.</div>
+            </div>
+            <div class="commentaire d-flex flex-column gap-3 rounded px-3 shadow-sm py-2">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="username">UserName</div>
+                <div class="date">Date</div>
+              </div>
+              <div class="text px-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, accusantium. Quasi itaque qui ducimus.</div>
+            </div>
+            <div class="commentaire d-flex flex-column gap-3 rounded px-3 shadow-sm py-2">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="username">UserName</div>
+                <div class="date">Date</div>
+              </div>
+              <div class="text px-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, accusantium. Quasi itaque qui ducimus.</div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+  <%- include('includs/Footer.ejs') %>
