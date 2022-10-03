@@ -2,157 +2,75 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-  <link href="css/style.css" rel="stylesheet" type="text/css">
-  <title>Profile</title>
+  <%- include('includs/Head_Admin.ejs'); %>
 </head>
 
 <body>
   <div class="position-absolute w-100" style="height: 40vh; background-color: #38B6FF">
     <div class="d-flex gap-3 mx-3" style="height: 100vh;">
-      <div class="col-2 position-relative" id="assidBar">
-        <aside class="d-flex flex-column align-items-center shadow" id="assidbar"
-          style="height: 96vh; margin-top: 2vh; background-color: #fff; border-radius: 16px;">
-          <!-- Logo -->
-          <div class="d-flex justify-content-center align-items-center ">
-            <img src="assets/the_all.png" style="width: 60%; padding-top: 20px;" alt="logo">
-          </div>
-          <hr class="w-75 m-0 my-2 p-0 text-dark">
-          <!-- Info Profile -->
-          <div class="d-flex flex-column text-center justify-content-center align-items-center py-2 gap-1">
-            <span class="fs-5 pt-3 fw-bold test-center" style="color:#38B6FF;">Abdenacer Sandali</span>
-            <div>
-              <ul
-                class="navbar-nav d-flex flex-column justify-content-center align-items-center my-2 gap-md-4 gap-sm-3 gap-1">
-                <li class="nav-item text-center">
-                  <a class="nav-link" href="Dashboard">
-                    <span class="text-dark">Dashboard</span>
-                  </a>
-                </li>
-                <li class="nav-item text-center ">
-                  <a class="nav-link" href="Profile">
-                    <span class="text-dark">Profil</span>
-                  </a>
-                </li>
-                <li class="nav-item text-center">
-                  <a class="nav-link" href="Articles">
-                    <span class="text-dark">Articles</span>
-                  </a>
-                </li>
-                <li class="nav-item text-center ">
-                  <a class="nav-link" href="Categories">
-                    <span class="text-dark">Categories</span>
-                  </a>
-                </li>
-                <li class="nav-item text-center ">
-                  <a class="nav-link" href="Commentaire">
-                    <span class="text-dark">Commentaires</span>
-                  </a>
-                </li>
-                <li class="nav-item text-center">
-                  <a class="nav-link" href="Contacts">
-                    <span class="text-dark">Contacts</span>
-                  </a>
-                </li>
-              </ul>
+      <%- include('includs/SidBar.ejs'); %>
+
+        <div class="position-relative w-100">
+          <nav class="d-flex justify-content-between align-items-center m-3">
+            <div class="h5">
+              <span class="text-black">Page</span>
+              <span class="text-black">/</span>
+              <span class="text-black text-inline">Profil</span>
             </div>
-            <!-- Logout -->
-            <hr class="w-75 m-0 p-0">
-            <div class="d-flex" style="bottom: 0;">
-              <a class="nav-link" href="logout"><span class="text-dark" style="color: #222;">Logout</span></a>
+            <div class="d-flex flex-row-reverse justify-content-center align-items-center">
+              <button class="border-0 d-none" id="btn_assidBar" style="background-color: #3498DB">
+                <i class="bi bi-menu-button-wide-fill h4 text-white d-none"></i>
+                <i class="bi bi-list h4 text-white" id="icone_menu"></i>
+              </button>
             </div>
-        </aside>
-      </div>
+          </nav>
 
-      <div class="position-relative w-100">
-        <nav class="d-flex justify-content-between align-items-center m-3">
-          <div class="h5">
-            <span class="text-black">Page</span>
-            <span class="text-black">/</span>
-            <span class="text-black text-inline">Profil</span>
-          </div>
-          <div class="d-flex flex-row-reverse justify-content-center align-items-center">
-            <button class="border-0 d-none" id="btn_assidBar" style="background-color: #3498DB">
-              <i class="bi bi-menu-button-wide-fill h4 text-white d-none"></i>
-              <i class="bi bi-list h4 text-white" id="icone_menu"></i>
-            </button>
-          </div>
-        </nav>
-
-        <div class="col-lg-11 mb-3 mb-sm-5 shadow ms-4">
-          <div class="card card-style1 border-0">
-            <div class="card-body p-9 p-sm-3 p-md-6 p-lg-7">
-              <div class="row align-items-center">
-                <div class="col-lg-5 d-md-flex d-none mb-3 mb-lg-0">
-                  <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="...">
-                </div>
-                <div class="col-lg-6 px-xl-10">
-                  <div class="d-lg-inline-block py-2 px-5 px-sm-3 mb-4 col-lg-12 rounded">
-                    <!-- <input class="h2 text-white mb-0 form-control mb-2" value="Abdenacer Sandali"> -->
-                    <span style="color: #38B6FF;" class="fs-2 fw-bold">Edite Profile</span>
+          <div class="col-lg-11 mb-3 mb-sm-5 shadow ms-4">
+            <div class="card card-style1 border-0">
+              <div class="card-body p-9 p-sm-3 p-md-6 p-lg-7">
+                <div class="row align-items-center">
+                  <div class="col-lg-5 d-md-flex d-none mb-3 mb-lg-0">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="...">
                   </div>
-                  <ul class="list-unstyled mb-1-9">
-                    <span class="display-26 text-secondary me-2 font-weight-600 fs-5">First Name:
-                    <input class="mb-2 col-12 mt-2 mb-xl-3 display-28"></span>
+                  <div class="col-lg-6 px-xl-10">
+                    <div class="d-lg-inline-block py-2 px-5 px-sm-3 mb-4 col-lg-12 rounded">
+                      <!-- <input class="h2 text-white mb-0 form-control mb-2" value="Abdenacer Sandali"> -->
+                      <span style="color: #38B6FF;" class="fs-2 fw-bold">Edite Profile</span>
+                    </div>
+                    <ul class="list-unstyled mb-1-9">
+                      <span class="display-26 text-secondary me-2 font-weight-600 fs-5">First Name:
+                        <input class="mb-2 col-12 mt-2 mb-xl-3 display-28"></span>
 
-                    <span class="display-26 text-secondary me-2 font-weight-600 fs-5">Last Name:
-                    <input class="mb-2 col-12 mt-2 mb-xl-3 display-28"></span>
+                      <span class="display-26 text-secondary me-2 font-weight-600 fs-5">Last Name:
+                        <input class="mb-2 col-12 mt-2 mb-xl-3 display-28"></span>
 
-                    <span class="display-26 text-secondary me-2 font-weight-600 fs-5">Email: 
-                    <input class="mb-2 col-12 mt-2 mb-xl-3 display-28"></span>
+                      <span class="display-26 text-secondary me-2 font-weight-600 fs-5">Email:
+                        <input class="mb-2 col-12 mt-2 mb-xl-3 display-28"></span>
 
-                    <span class="display-26 text-secondary me-2 font-weight-600 fs-5">Phone:
-                    <input class="mb-2 col-12 mt-2 mb-xl-3 display-28"></span> 
+                      <span class="display-26 text-secondary me-2 font-weight-600 fs-5">Phone:
+                        <input class="mb-2 col-12 mt-2 mb-xl-3 display-28"></span>
 
-                    <span class="display-26 text-secondary me-2 font-weight-600 fs-5">Password:
-                    <input class="mb-2 col-12 mt-2 mb-xl-3 display-28"></span>
-                  </ul>
-                  <div>
-                    <button type="submit" class="btn fs-6 w-25 mb-3" style="background-color: #38B6FF;">Valider</button>
-                  </div>
-                  <!-- <ul class="social-icon-style1 d-flex gap-3 fs-5 list-unstyled mb-0 ps-0">
+                      <span class="display-26 text-secondary me-2 font-weight-600 fs-5">Password:
+                        <input class="mb-2 col-12 mt-2 mb-xl-3 display-28"></span>
+                    </ul>
+                    <div>
+                      <button type="submit" class="btn fs-6 w-25 mb-3"
+                        style="background-color: #38B6FF;">Valider</button>
+                    </div>
+                    <!-- <ul class="social-icon-style1 d-flex gap-3 fs-5 list-unstyled mb-0 ps-0">
                     <li><a href="#!"><i class="bi bi-twitter text-dark"></i></a></li>
                     <li><a href="#!"><i class="bi bi-facebook text-dark"></i></a></li>
                     <li><a href="#!"><i class="bi bi-pinterest text-dark"></i></a></li>
                     <li><a href="#!"><i class="bi bi-instagram text-dark"></i></a></li>
                   </ul> -->
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <script>
-        //AssidBar
-        const assidBar = document.getElementById('assidBar');
-        const btn_assidBar = document.getElementById('btn_assidBar');
-        const icone_menu = document.getElementById('icone_menu');
-        btn_assidBar.onclick = function () {
-          if (icone_menu.classList.contains('bi-list')) {
-            icone_menu.classList.remove('bi-list');
-            icone_menu.classList.add('bi-x-lg');
-            assidBar.style.removeProperty('display');
-            assidBar.setAttribute("style", "display: block !important;");
-            assidBar.classList.remove('d-none');
-            assidBar.classList.add('d-block');
-          } else {
-            icone_menu.classList.remove('bi-x-lg');
-            icone_menu.classList.add('bi-list');
-            assidBar.style.removeProperty('display');
-            assidBar.setAttribute("style", "display: none !important;");
-          }
-        }
-      </script>
-<!-- script bootstrap -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-crossorigin="anonymous"></script>
+        <%- include('includs/Footer_Admin.ejs'); %>
 </body>
 
 </html>
