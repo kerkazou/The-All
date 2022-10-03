@@ -1,14 +1,14 @@
 const express = require('express');
-const bodyParser = require('body-parser');
+// const bodyParser = require('body-parser');
 const app = express();
 
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({extended: true}));
+// app.use(bodyParser.json());
 
 
-const db = require('./config/database')
+// const db = require('./config/database')
 
 
 app.get('/', (req, res) => {
@@ -37,12 +37,12 @@ app.get('/Contacts', (req, res) => {
 
 
 
-try {
-  await sequelize.authenticate();
-  console.log('Connection has been established successfully.');
-} catch (error) {
-  console.error('Unable to connect to the database:', error);
-}
+// try {
+//   await sequelize.authenticate();
+//   console.log('Connection has been established successfully.');
+// } catch (error) {
+//   console.error('Unable to connect to the database:', error);
+// }
 
 
 app.listen(3000, () => console.log('Server running on http://localhost:${port}'));
