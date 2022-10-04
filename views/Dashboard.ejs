@@ -1,0 +1,64 @@
+
+  <%- include('includs/Head_Admin.ejs'); %>
+
+  <div class="position-absolute w-100" style="height: 40vh; background-color: #38B6FF">
+    <div class="d-flex gap-3 mx-3" style="height: 100vh;">
+      <%- include('includs/SidBar_Admin.ejs'); %>
+
+        <!-- Navbar -->
+        <div class="position-relative w-100 ">
+          <%- include('includs/Navbar_Admin.ejs'); %>
+
+          <!-- Statistiques -->
+          <div class="container-fluid pb-3">
+            <div style="height: 3vh;"></div>
+            <div class="row d-flex flex-wrap justify-content-center align-items-center">
+              <div class=" col-xl-4 col-sm-6 mb-xl-0">
+                <div class="card border-0 shadow-sm mb-3" style="min-height: 150px; border-radius: 16px;">
+                  <div class="card-body  d-flex flex-column justify-content-between align-items-center p-3">
+                    <h4 class="text-sm mb-0 text-uppercase font-weight-bold">Visiteur</h4>
+                    <h3 class="font-weight-bolder">0</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-4 col-sm-6 mb-xl-0">
+                <div class="card border-0 shadow-sm mb-3" style="min-height: 150px; border-radius: 16px;">
+                  <div class="card-body d-flex flex-column justify-content-between align-items-center p-3">
+                    <h4 class="text-sm mb-0 text-uppercase font-weight-bold">Articl</h4>
+                    <h3 class="font-weight-bolder">0</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-4 col-sm-6 mb-xl-0">
+                <div class="card border-0 shadow-sm mb-3" style="min-height: 150px; border-radius: 16px;">
+                  <div class="card-body d-flex flex-column justify-content-between align-items-center p-3">
+                    <h4 class="text-sm mb-0 text-uppercase font-weight-bold">Catécorie</h4>
+                    <h3 class="font-weight-bolder">0</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-4 col-sm-6 mb-xl-0">
+                <div class="card border-0 shadow-sm mb-3" style="min-height: 150px; border-radius: 16px;">
+                  <div class="card-body d-flex flex-column justify-content-between align-items-center p-3">
+                    <h4 class="text-sm mb-0 text-uppercase font-weight-bold">Commentaire</h4>
+                    <h3 class="font-weight-bolder">0</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-4 col-sm-6 mb-xl-0">
+                <div class="card border-0 shadow-sm mb-3" style="min-height: 150px; border-radius: 16px;">
+                  <div class="card-body d-flex flex-column justify-content-between align-items-center p-3">
+                    <h4 class="text-sm mb-0 text-uppercase font-weight-bold">Avis</h4>
+                    <h3 class="font-weight-bolder">0</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="container" class="w-50 h-25 ms-4"></div>
+        </div>
+
+    </div>
+  </div>
+
+  <%- include('includs/Footer_Admin.ejs'); %>

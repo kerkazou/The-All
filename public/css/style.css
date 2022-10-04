@@ -1,22 +1,46 @@
-:root{
+:root {
     --white: #fff;
     --black: #222222;
     --bleu: #38B6FF;
+    --bleu2: #9ec7e6;
 }
 
 
-body{
+body {
     margin: 0;
     padding: 0;
 }
-body #home #navbar ul li a{
-    color: var(--bleu);
+
+
+/*********** NarBar ***********/
+body #navbar div:last-child {
+    z-index: 999;
 }
-body #home{
+
+body #navbar ul li a {
+    color: var(--black);
+    font-weight: bold;
+}
+
+body #navbar #logo {
+    width: 25%;
+}
+
+body #navbar ul li .active {
+    background-color: var(--bleu);
+    color: var(--white);
+}
+
+/*********** NarBar ***********/
+
+
+/*********** Home ***********/
+body #home {
     width: 100%;
     height: 100vh;
 }
-body #home #content{
+
+body #home #content {
     width: 100%;
     height: 70vh;
     background-image: url(../assets/home1.jpg);
@@ -26,12 +50,283 @@ body #home #content{
     transition: 2s;
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-body #home #article_tandance{
-    width: 50%;
+
+body #home #content #content_text {
+    position: absolute;
+    top: 22vh;
+    font-size: 30px;
+}
+
+body #home #content #content_text a {
+    color: var(--bleu);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+body #home #content #content_text span {
+    color: var(--white);
+}
+
+body #home #content #content_search {
+    position: absolute;
+    top: 40vh;
+    font-size: 30px;
+}
+
+body #home #content #content_search input {
+    height: 50px;
+}
+
+body #home #article_tandance {
     height: 40vh;
-    margin-left: 25%;
     margin-top: -12vh;
-    background-color: var(--black);
     border-radius: 8px;
 }
+
+body #home #article_tandance #image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+body #home #article_tandance #title {
+    color: var(--bleu);
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+
+body #home #article_tandance #categorie {
+    color: var(--black);
+    font-weight: 600;
+    font-size: 18px;
+}
+
+body #home #article_tandance #discriptions {
+    font-size: 15px;
+}
+
+body #home #article_tandance #lire_suite {
+    font-size: 15px;
+}
+.bi:hover{
+    color: var(--bleu);
+}
+/*********** Home ***********/
+
+
+/*********** Blog ***********/
+body #blog {
+    width: 100%;
+}
+
+body #blog #sidebar_categorie input[type='radio'][name='buttonCategorie'] {
+    display: none;
+}
+
+body #blog #sidebar_categorie label {
+    background-color: var(--white);
+    color: var(--bleu);
+    font-weight: bold;
+    border: solid 1px var(--bleu);
+    text-align: center;
+}
+
+body #blog #sidebar_categorie input[type='radio'][name='buttonCategorie']:checked+label {
+    background-color: var(--bleu);
+    color: var(--white);
+}
+
+body #blog #content .articles img {
+    height: 200px;
+}
+
+body #blog #content .articles .title {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+body #blog #content .articles .title a{
+    color: var(--bleu);
+}
+body #blog #content .articles .categorie{
+    font-size: 15px;
+    font-weight: 600;
+}
+
+body #blog #content .articles .discription {
+    font-size: 15px;
+}
+
+body #blog #content .articles .lire_suite {
+    font-size: 12px;
+}
+
+/*********** Blog ***********/
+
+
+/*********** About ***********/
+body #about {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+body #about #title {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+body #about .card #name {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+body #about .card #discription {
+    font-size: 16px;
+}
+
+body #about .card #media {
+    font-size: 28px;
+}
+
+body #about .card #media i:hover {
+    color: var(--bleu);
+}
+
+/*********** About ***********/
+
+
+/*********** Contact ***********/
+body #contact {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../assets/map.png);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    transition: 2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+body #contact #title {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+body #contact form input {
+    height: 50px;
+}
+
+body #contact form textarea {
+    min-height: 130px;
+}
+
+body #contact form button {
+    height: 50px;
+    background-color: var(--bleu);
+    color: var(--white);
+    border: none;
+}
+
+/*********** Contact ***********/
+
+
+/*********** The All Article ***********/
+body #affichage_article{
+    padding-top: 15vh;
+}
+body #affichage_article #title{
+    font-size: 35px;
+    font-weight: bold;
+    color: var(--bleu);
+}
+body #affichage_article #commentaires{
+    display: flex;
+    flex-direction: column;
+}
+body #affichage_article .commentaire{
+    background-color: rgb(249 247 247);
+    min-height: 80px;
+}
+body #affichage_article .commentaire .username{
+    font-weight: bold;
+    font-size: 18px;
+}
+body #affichage_article .commentaire .date{
+    font-weight: 500;
+    font-size: 15px;
+}
+body #affichage_article #add_commontaire1,#add_commontaire2{
+    display: none;
+    flex-direction: column;
+}
+body #affichage_article input[type='submit']{
+    background-color: var(--bleu);
+    color: var(--white);
+    border: none;
+}
+/*********** The All Article ***********/
+
+
+/*********** Footer ***********/
+body #footer {
+    width: 100%;
+    height: 100%;
+    background-color: var(--bleu);
+}
+#footer #media i:hover {
+    color:rgb(33, 44, 54);
+}
+/*********** Footer ***********/
+
+
+/*********** Dashboard ***********/
+/* Assidbar */
+body #assidBar{
+    width: 270px;
+}
+@media screen and (max-width: 1200px) {
+    body #assidBar{
+        position: absolute !important;
+        z-index: 999;
+        display: none !important;
+    }
+    body #btn_assidBar{
+        display: block !important;
+    }
+}
+body #assidBar ul li a{
+    width: 240px;
+    color: var(--black);
+}
+body #assidBar ul li:hover{
+    background-color: var(--bleu);
+    border-radius: 8px;
+}
+body #assidBar ul li:hover a{
+    color: var(--white);
+}
+body .active_assidBar {
+    background-color: #3498DB;
+    border-radius: 50px 0 0 50px;
+    width: 226px;
+    padding: 6px 0px;
+}
+#valider{
+    background-color: var(--bleu);
+    color: var(--white);
+    border: none;
+}
+/*********** Dashboard ***********/

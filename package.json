@@ -1,9 +1,18 @@
 {
   "dependencies": {
+    "body-parser": "^1.20.0",
     "bootstrap": "^5.2.1",
+    "bootstrap-icons": "^1.9.1",
+    "cors": "^2.8.5",
+    "D": "^1.0.0",
     "ejs": "^3.1.8",
     "express": "^4.18.1",
-    "nodejs": "^0.0.0"
+    "g": "^2.0.1",
+    "mysql2": "^2.3.3",
+    "node": "^18.10.0",
+    "nodejs": "^0.0.0",
+    "sequelize": "^6.23.2",
+    "sqlstring": "^2.3.3"
   },
   "name": "mini-blog",
   "version": "1.0.0",
@@ -22,8 +31,8 @@
     "url": "https://github.com/abdnacer/Mini-Blog/issues"
   },
   "homepage": "https://github.com/abdnacer/Mini-Blog#readme",
-  "description": "",
   "devDependencies": {
     "nodemon": "^2.0.20"
-  }
+  },
+  "description": ""
 }

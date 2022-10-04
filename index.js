@@ -1,20 +1,20 @@
 const express = require('express');
 const app = express();
-
 app.set('view engine', 'ejs');
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public')); 
+
+// Middleware
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+
+// Routers
+const article = require('./routes/articleRouter.js');
+app.use('/articles', article);
+const admin = require('./routes/adminRouter.js');
+app.use('/admins', admin);
 
 
-app.get('/', (req, res) => {
-  res.render('The-All');
-});
 
-app.get('/The-All', (req, res) => {
-  res.render('The-All');
-});
-
-app.get('/Dashboard', (req, res) => {
-  res.render('Dashboard');
-});
-
-app.listen(3000, () => console.log('Server running on http://localhost:${port}'));
+// Port
+const PORT = 5000;
+app.listen(PORT, () => console.log('Server running on http://localhost:${port}'));
