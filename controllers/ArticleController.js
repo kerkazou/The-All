@@ -1,60 +1,83 @@
+const { where } = require('sequelize');
 const db = require('../models');
 
 // Create Main Model
-const Admin = db.admins;
 const Article = db.articles;
 
 // Add Article
 const addArticle = async(req , res) => {
-    let info = {
-        title: req.body.title,
-        image: req.body.image,
-        discription: req.body.discription
-    }
+    const {body} = req;
+    Article.create({...body})
+    .then(()=>{
+        res.json({Success:'Article is added'});
+    }).catch(()=>{
+        res.json({Error:'Article is not added'});
+    });
 
-    const article = await Article.create(info);
-    res.status(200).send(article);
 }
 
 // Get All Articles
 const getAllArticles = async(req , res) => {
-    let articles = await Article.findAll({
-        attributes: [
-            'title',
-            'image',
-            'discription'
-        ]
-    })
-
-    res.status(200).send(articles);
+    const getarticles = Article.findAll()
+    .then(article=>
+        {res.json({article}
+    )})
+    .catch(()=>
+        {res.send('Error')}
+    );
 }
 
 // Get All Articles
 const getoneArticle = async(req , res) => {
-    let id = req.params.id;
-    let article = await Article.findOne({
-        where: {id:id}
-    });
-
-    res.status(200).send(article);
+    let {id} = req.params;
+    Article.findByPk(id)
+    .then(article=>
+        {res.json({article}
+    )})
+    .catch(()=>
+        {res.send('Error')}
+    );
 }
 
 // Update Articles
 const updateArticle = async(req , res) => {
-    let id = req.params.id;
-    const article = await Article.update(req.body, {id:id});
-
-    res.status(200).send(article);
+    let {id} = req.params;
+    const {body} = req;
+    Article.update({...body}, {where: {
+        id:id
+    }})
+    .then(()=>
+        {res.send('Success')}
+    )
+    .catch(()=>
+        {res.send('Error')}
+    );
 }
 
 // Delete Articles
 const deleteArticle = async(req , res) => {
-    let id = req.params.id;
-    await Article.destroy({
-        where: {id:id}
-    });
+    let {id} = req.params;
+    Article.destroy({where: {
+        id:id
+    }})
+    .then(()=>
+        {res.send('Success')}
+    )
+    .catch(()=>
+        {res.send('Error')}
+    );
+}
 
-    res.status(200).send('Article is deleted !');
+// Delete Articles
+const countArticle = async(req , res) => {
+    let {id} = req.params;
+    Article.count()
+    .then(article=>
+        {res.json({article}
+    )})
+    .catch(()=>
+        {res.send('Error')}
+    );
 }
 
 
@@ -63,5 +86,6 @@ module.exports = {
     getAllArticles,
     getoneArticle,
     updateArticle,
-    deleteArticle
+    deleteArticle,
+    countArticle
 }

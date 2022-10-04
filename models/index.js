@@ -42,4 +42,9 @@ db.sequelize.sync({ force: false })
     console.log('Yes re-senc done!');
 })
 
+db.articles.hasMany(db.comments);
+db.visiteurs.hasMany(db.comments);
+db.articles.hasMany(db.avis);
+db.visiteurs.hasMany(db.avis);
+
 module.exports = db;
