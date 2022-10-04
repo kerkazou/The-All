@@ -1,27 +1,19 @@
+const { json } = require('body-parser');
 const { where } = require('sequelize');
 const db = require('../models');
 
 // Create Main Model
 const Article = db.articles;
 
-// Add Article
-const addArticle = async(req , res) => {
-    const {body} = req;
-    Article.create({...body})
-    .then(()=>{
-        res.json({Success:'Article is added'});
-    }).catch(()=>{
-        res.json({Error:'Article is not added'});
-    });
-
-}
-
 // Get All Articles
 const getAllArticles = async(req , res) => {
-    const getarticles = Article.findAll()
-    .then(article=>
-        {res.json({article}
-    )})
+    const getallarticles = Article.findAll()
+    .then(getallarticles=>
+        {res.render('Articles', {getallarticles})}
+    )
+    // .then(article=>
+    //     {res.json({article: article[0].title}
+    // )})
     .catch(()=>
         {res.send('Error')}
     );
@@ -37,6 +29,18 @@ const getoneArticle = async(req , res) => {
     .catch(()=>
         {res.send('Error')}
     );
+}
+
+// Add Article
+const addArticle = async(req , res) => {
+    const {body} = req;
+    Article.create({...body})
+    .then(()=>{
+        res.json({Success:'Article is added'});
+    }).catch(()=>{
+        res.json({Error:'Article is not added'});
+    });
+
 }
 
 // Update Articles

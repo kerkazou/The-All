@@ -32,33 +32,17 @@
               </tr>
               </thead>
               <tbody>
-                <tr>
-                    <td class="col-2">Amet</td>
-                    <td class="col-2">Sit</td>
-                    <td class="col-6">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</td>
+                <% for(var i=0; i<getallarticles.length; i++) {%>
+                  <tr>
+                    <td class="col-2"><%= getallarticles[i].title %></td>
+                    <td class="col-2"><%= getallarticles[i].image %></td>
+                    <td class="col-6"><%= getallarticles[i].discription %></td>
                     <td class="col-2">
                         <button class="btn" data-bs-toggle="modal" data-bs-target="#edite" ><i class="bi bi-pencil-square fs-4 " style="color: rgb(9, 187, 98);;"></i></button>
                         <button class="btn"><i class="bi bi-x-octagon-fill fs-4 " style="color:red;"></i></button>                   
                     </td>
-                </tr>
-                <tr>
-                    <td class="col-2">Amet</td>
-                    <td class="col-2">Sit</td>
-                    <td class="col-6">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</td>
-                    <td class="col-2">
-                        <button class="btn" data-bs-toggle="modal" data-bs-target="#edite" ><i class="bi bi-pencil-square fs-4 " style="color: rgb(9, 187, 98);;"></i></button>
-                        <button class="btn"><i class="bi bi-x-octagon-fill fs-4 " style="color:red;"></i></button>                   
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-2">Amet</td>
-                    <td class="col-2">Sit</td>
-                    <td class="col-6">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</td>
-                    <td class="col-2">
-                        <button class="btn" data-bs-toggle="modal" data-bs-target="#edite" ><i class="bi bi-pencil-square fs-4 " style="color: rgb(9, 187, 98);;"></i></button>
-                        <button class="btn"><i class="bi bi-x-octagon-fill fs-4 " style="color:red;"></i></button>                   
-                    </td>
-                </tr>
+                  </tr>
+                <% } %>
               </tbody>
             </table>
           </div>
