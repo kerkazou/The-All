@@ -1,127 +1,133 @@
-
-  <%- include('includs/Head_Admin.ejs'); %>
+<%- include('includs/Head_Admin.ejs'); %>
 
   <div class="position-absolute w-100" style="height: 40vh; background-color: #38B6FF">
     <div class="d-flex gap-3 mx-3" style="height: 100vh;">
       <%- include('includs/SidBar_Admin.ejs'); %>
 
-      <div class="position-relative w-100 ">
-        <%- include('includs/Navbar_Admin.ejs'); %>
+        <div class="position-relative w-100 ">
+          <%- include('includs/Navbar_Admin.ejs'); %>
 
-        <div style="height: 6vh;"></div>
-        <!-- les catergorie -->
-        <div class=" bg-light w-100 categories  " style="height: 80vh; ">
-            <div class="bg-body shadow">
+            <div style="height: 6vh;"></div>
+            <!-- les catergorie -->
+            <div class=" bg-light w-100 categories  " style="height: 80vh; ">
+              <div class="bg-body shadow">
                 <div class="d-flex justify-content-between pt-3 p-3 bg-light">
-                    <div>
-                      <div class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                      </div>                        
+                  <div>
+                    <div class="d-flex" role="search">
+                      <input class="form-control me-2 shadow-none" type="search" placeholder="Search" id="search"
+                        aria-label="Search">
                     </div>
-                    <div class=" d-flex justify-content-md-end">
-                        <button class="btn" style="background:#66c2ff;" data-bs-toggle="modal" data-bs-target="#staticBackdrop"  type="button"><img src="https://img.icons8.com/avantgarde/30/000000/plus.png"/>categories</button>
-                    </div>
+                  </div>
+                  <div class=" d-flex justify-content-md-end">
+                    <button class="btn shadow-none" style="background:#66c2ff;" data-bs-toggle="modal"
+                      data-bs-target="#staticBackdrop" type="button"><img
+                        src="https://img.icons8.com/avantgarde/30/000000/plus.png" />Add Categories</button>
+                  </div>
                 </div>
                 <table class="table table-sm table-responsive text-center">
-                    <thead>
-                      <tr>
-                        <th class="col-4">Name</th>
-                        <th class="col-5">Discrption</th>
-                        <th class="col-3"></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td class="col-4">Amet</td>
-                        <td class="col-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</td>
-                        <td class="col-3">
-                          <button class="btn" data-bs-toggle="modal" data-bs-target="#edite" ><i class="bi bi-pencil-square fs-4 " style="color: rgb(9, 187, 98);;"></i></button>
-                          <button class="btn"><i class="bi bi-x-octagon-fill fs-4 " style="color:red;"></i></button>                   
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="col-4">Amet</td>
-                        <td class="col-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</td>
-                        <td class="col-3">
-                          <button class="btn" data-bs-toggle="modal" data-bs-target="#edite" ><i class="bi bi-pencil-square fs-4 " style="color: rgb(9, 187, 98);;"></i></button>
-                          <button class="btn"><i class="bi bi-x-octagon-fill fs-4 " style="color:red;"></i></button>                   
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="col-4">Amet</td>
-                        <td class="col-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</td>
-                        <td class="col-3">
-                          <button class="btn" data-bs-toggle="modal" data-bs-target="#edite" ><i class="bi bi-pencil-square fs-4 " style="color: rgb(9, 187, 98);;"></i></button>
-                          <button class="btn"><i class="bi bi-x-octagon-fill fs-4 " style="color:red;"></i></button>                   
-                        </td>
-                      </tr>
-                    </tbody>
+                  <thead>
+                    <tr>
+                      <th class="col-4">Name</th>
+                      <th class="col-5">Discrption</th>
+                      <th class="col-3"></th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                  <% for(var i=0; i < getallcategories.length; i++) {%>
+                    <tr>
+                      <td class="d-none">
+                        <%= getallcategories[i].id %>
+                      </td>
+                      <td class="col-5 name-row">
+                        <%= getallcategories[i].name %>
+                      </td>
+                      <td class="col-5">
+                        <%= getallcategories[i].discription %>
+                      </td>
+                      <td class="col-3">
+                        <div class="d-flex">
+                          <button class="btn shadow-none" data-bs-toggle="modal" data-bs-target="#edite">
+                            <i class="bi bi-pencil-square fs-4 " style="color: rgb(9, 187, 98);;"></i></button>
+                          <form action="/categories/delete" method="post">
+                            <input name="id" type="hidden" value=<%=getallcategories[i].id %>>
+                            <button type="submit" class="btn shadow-none" value="id">
+                              <i class="bi bi-x-octagon-fill fs-4" style="color:red;"></i>
+                            </button>
+                          </form>
+                        </div>
+                      </td>
+                    </tr>
+                    <% } %>
+                      </tbody>
                 </table>
+              </div>
             </div>
         </div>
-      </div>
     </div>
-    
   </div>
   </div>
+
   <!-- modal add -->
-  <div class="modal fade "  id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-content " >
+      <div class="modal-content ">
         <div class="modal-header  " style="background: #4ba7ed;">
           <h5 class="modal-title" id="staticBackdropLabel">Ajouter un categories</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body ">
-            <form>
-                <!-- title input -->
-                <div class="form-outline mb-3">
-                  <label class="form-label" for="form4Example1"><strong>Name de  categories</strong></label>
-                  <input type="text" id="form4Example1" class="form-control" />
-                </div>
-                <!-- Message input -->
-                <div class="form-outline mb-3">
-                   <label class="form-label" for="form4Example3"><strong>discription</strong></label>
-                  <textarea class="form-control" id="form4Example3" rows="4"></textarea>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn fw-bold" style="background: #4ba7ed;">Ajouter </button>
-                  </div>
-              </form>
+          <form action="/categories/addCategory" method="post">
+            <!-- title input -->
+            <div class="form-outline mb-3">
+              <label class="form-label " for="form4Example1"><strong>Name de categories</strong></label>
+              <input type="text" name="name" id="form4Example1" class="form-control shadow-none" />
+            </div>
+            <!-- Message input -->
+            <div class="form-outline mb-3">
+              <label class="form-label" for="form4Example3"><strong>discription</strong></label>
+              <textarea class="form-control shadow-none" name="discription" id="form4Example3" rows="4"></textarea>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn fw-bold" style="background: #4ba7ed;">Ajouter </button>
+            </div>
+          </form>
         </div>
-        
+
       </div>
     </div>
   </div>
+
   <!-- modal update -->
-  <div class="modal fade "  id="edite" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal fade " id="edite" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-content " >
+      <div class="modal-content ">
         <div class="modal-header  " style="background: #4ba7ed;">
           <h5 class="modal-title" id="edite">Modifier categories</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body ">
-            <form>
-                <!-- title input -->
-                <div class="form-outline mb-3">
-                    <label class="form-label" for="form4Example1"><strong>Name de  categories</strong></label>
-                  <input type="text" id="form4Example1" class="form-control" />
-                </div>
-              
-                <!-- Message input -->
-                <div class="form-outline mb-3">
-                    <label class="form-label" for="form4Example3"><strong>discription</strong></label>
-                  <textarea class="form-control" id="form4Example3" rows="4"></textarea>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn fw-bold" style="background: #4ba7ed;">Modifier </button>
-                  </div>
-              </form>
+          <form>
+            <!-- title input -->
+            <div class="form-outline mb-3">
+              <label class="form-label" for="form4Example1"><strong>Name de categories</strong></label>
+              <input type="text" id="form4Example1" class="form-control" />
+            </div>
+
+            <!-- Message input -->
+            <div class="form-outline mb-3">
+              <label class="form-label" for="form4Example3"><strong>discription</strong></label>
+              <textarea class="form-control" id="form4Example3" rows="4"></textarea>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn fw-bold" style="background: #4ba7ed;">Modifier </button>
+            </div>
+          </form>
         </div>
-        
+
       </div>
     </div>
   </div>
@@ -146,12 +152,32 @@
         assidBar.setAttribute("style", "display: none !important;");
       }
     }
+
+    // Search
+    let searchInput = document.getElementById('search')
+    searchInput.addEventListener('input', function () {
+      let value = searchInput.value.toUpperCase()
+      let columns = [...document.querySelectorAll('.name-row')]
+      columns.forEach(column => {
+        if (!column.textContent.toUpperCase().trim().startsWith(value)) {
+          column.parentElement.style.display = 'none';
+        }
+        else {
+          column.parentElement.style.display = 'table-row';
+        }
+      })
+    })
   </script>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
-</body>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+    crossorigin="anonymous"></script>
+  </body>
 
-</html>
+  </html>
