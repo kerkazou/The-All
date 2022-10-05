@@ -26,28 +26,16 @@ const getAllCategories = async (req, res) => {
         );
 }
 
-// Get One Articles
-const getoneCategory = async (req, res) => {
-    let { id } = req.params;
-    Category.findByPk(id)
-        .then(article => {
-            res.json({ article }
-            )
-        })
-        .catch(() => { res.send('Error') }
-        );
-}
-
 // Update Articles
 const updateCategory = async (req, res) => {
-    let { id } = req.params;
+    let { id } = req.body;
     const { body } = req;
     Category.update({ ...body }, {
         where: {
             id: id
         }
     })
-        .then(() => { res.send('Success') }
+        .then(() => { res.redirect('/categories') }
         )
         .catch(() => { res.send('Error') }
         );
@@ -61,8 +49,7 @@ const deleteCategory = async (req, res) => {
             id: id
         }
     })
-        .then(() =>
-            { res.redirect('/categories') }
+        .then(() => { res.redirect('/categories') }
         )
         .catch(() => { res.send('Error') }
         );
@@ -84,7 +71,6 @@ const countCategory = async (req, res) => {
 module.exports = {
     addCategory,
     getAllCategories,
-    getoneCategory,
     updateCategory,
     deleteCategory,
     countCategory
