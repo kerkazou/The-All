@@ -8,9 +8,6 @@ app.use(express.static(__dirname + '/public'));
 const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: false }))
 
-// Body parser
-const bodyParser = require('body-parser')
-app.use(bodyParser.urlencoded({ extended: false }))
 
 // Middleware
 app.use(express.json());
