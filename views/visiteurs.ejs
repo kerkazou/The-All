@@ -15,7 +15,7 @@
               <div class="d-flex justify-content-center py-4 p-3 bg-light">
                 <div class="col-lg-3">
                   <div class="d-flex">
-                    <input class="form-control me-2 shadow-none p-2" type="search" placeholder="Search" aria-label="Search">
+                    <input class="form-control me-2 shadow-none p-2" id="search" type="search" placeholder="Search" aria-label="Search">
                   </div>
                 </div>
               </div>
@@ -29,7 +29,7 @@
                   <tbody >
                     <% for(var i=0; i<getallvisiteurs.length; i++) {%>
                       <tr>
-                        <td class="col-6"><%= getallvisiteurs[i].name %></td>
+                        <td class="col-6 name-row"><%= getallvisiteurs[i].name %></td>
                         <td class="col-6"><%= getallvisiteurs[i].email %></td>
                       </tr>
                     <% } %>
@@ -42,5 +42,21 @@
   </div>
   </div>
   
+  <script>
+    // Search
+    let searchInput = document.getElementById('search')
+    searchInput.addEventListener('input', function () {
+      let value = searchInput.value.toUpperCase()
+      let columns = [...document.querySelectorAll('.name-row')]
+      columns.forEach(column => {
+        if (!column.textContent.toUpperCase().trim().includes(value)) {
+          column.parentElement.style.display = 'none';
+        }
+        else {
+          column.parentElement.style.display = 'table-row';
+        }
+      })
+    })
+  </script>
 
   <%- include('includs/Footer_Admin.ejs'); %>
