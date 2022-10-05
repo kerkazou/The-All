@@ -8,6 +8,10 @@ app.use(express.static(__dirname + '/public'));
 const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: false }))
 
+// Body parser
+const bodyParser = require('body-parser')
+app.use(bodyParser.urlencoded({ extended: false }))
+
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -19,6 +23,8 @@ const admin = require('./routes/adminRouter.js');
 app.use('/admins', admin);
 const category = require('./routes/categoriesRouter.js');
 app.use('/categories', category);
+const visiteur = require('./routes/visiteurRouter.js');
+app.use('/visiteurs', visiteur);
 
 
 
