@@ -1,104 +1,108 @@
-    <!-- modal add -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-        <div class="modal-content " >
-            <div class="modal-header  " style="background: #4ba7ed;">
-            <h5 class="modal-title" id="staticBackdropLabel">Ajouter Article</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body ">
-            <form action="articles/addArticle" method="post">
-                <div class="form-outline mb-3">
-                <label for="title"><strong>Title</strong></label>
-                <input type="text" name="title" id="titlt" class="form-control"/>
-                </div>
-                <div class="form-outline mb-3">
-                <label for="category"><strong>Category</strong></label>
-                <select name="category" id="category" class="form-control">
-                    <% for(var i=0; i<getallcategorys.length; i++) {%>
-                    <option value=<%= getallcategorys[i].id %>><%= getallcategorys[i].name %></option>
-                    <% } %>
-                </select>
-                </div>
-                <div class="form-outline mb-3">
-                <label class="form-label" for="image"><strong>Image</strong></label>
-                <input type="text" name="image" id="form4Example2" class="form-control"/>
-                </div>
-                <div class="form-outline mb-3">
-                <label class="form-label" for="discription"><strong>discription</strong></label>
-                <textarea class="form-control" name="discription" id="discription" rows="4"></textarea>
-                </div>
-                <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="submit" class="btn fw-bold" style="background: #4ba7ed;">Ajouter</button>
-                </div>
-            </form>
-            </div>
-        </div>
-        </div>
-    </div>
-
-  <!-- modal update -->
-  <div class="modal fade" id="edite" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header" style="background: #4ba7ed;">
-          <h5 class="modal-title">Modifier Article</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form action="articles/editeArticle" method="post" id="form_edite">
-            <div class="form-outline mb-3 d-none">
-              <label for="id"><strong>id</strong></label>
-              <input class="form-control id" value="" type="text" name="id" id="titlt"/>
-            </div>
-            <div class="form-outline mb-3">
-              <label for="title"><strong>Title</strong></label>
-              <input class="form-control title" value="" type="text" name="title" id="titlt"/>
-            </div>
-            <div class="form-outline mb-3">
-              <label for="category"><strong>Category</strong></label>
-              <select class="form-control categoryId" value="" name="category" id="category">
-                <% for(var i=0; i<getallcategorys.length; i++) {%>
-                  <option value=<%= getallcategorys[i].id %>><%= getallcategorys[i].name %></option>
+<!-- modal add -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content ">
+      <div class="modal-header  " style="background: #4ba7ed;">
+        <h5 class="modal-title" id="staticBackdropLabel">Ajouter Article</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body ">
+        <form action="articles/addArticle" method="post">
+          <div class="form-outline mb-3">
+            <label for="title"><strong>Title</strong></label>
+            <input type="text" name="title" id="titlt" class="form-control" />
+          </div>
+          <div class="form-outline mb-3">
+            <label for="category"><strong>Category</strong></label>
+            <select name="category" id="category" class="form-control">
+              <% for(var i=0; i<getallcategorys.length; i++) {%>
+                <option value=<%=getallcategorys[i].id %>><%= getallcategorys[i].name %>
+                </option>
                 <% } %>
-              </select>
-            </div>
-            <div class="form-outline mb-3">
-              <label class="form-label" for="image"><strong>Image</strong></label>
-              <input class="form-control image" value="" type="text" name="image" id="form4Example2"/>
-            </div>
-            <div class="form-outline mb-3">
-              <label class="form-label" for="discription"><strong>discription</strong></label>
-              <textarea class="form-control discription" value="" name="discription" id="discription" rows="4"></textarea>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="submit" class="btn fw-bold" style="background: #4ba7ed;">Update</button>
-            </div>
-          </form>
-        </div>
+            </select>
+          </div>
+          <div class="form-outline mb-3">
+            <label class="form-label" for="image"><strong>Image</strong></label>
+            <input type="text" name="image" id="form4Example2" class="form-control" />
+          </div>
+          <div class="form-outline mb-3">
+            <label class="form-label" for="discription"><strong>discription</strong></label>
+            <textarea class="form-control" name="discription" id="discription" rows="4"></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn fw-bold" style="background: #4ba7ed;">Ajouter</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
+</div>
+
+<!-- modal update -->
+<div class="modal fade" id="edite" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header" style="background: #4ba7ed;">
+        <h5 class="modal-title">Modifier Article</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="articles/editeArticle" method="post" id="form_edite">
+          <div class="form-outline mb-3 d-none">
+            <label for="id"><strong>id</strong></label>
+            <input class="form-control id" value="" type="text" name="id" id="titlt" />
+          </div>
+          <div class="form-outline mb-3">
+            <label for="title"><strong>Title</strong></label>
+            <input class="form-control title" value="" type="text" name="title" id="titlt" />
+          </div>
+          <div class="form-outline mb-3">
+            <label for="category"><strong>Category</strong></label>
+            <select class="form-control categoryId" value="" name="category" id="category">
+              <% for(var i=0; i<getallcategorys.length; i++) {%>
+                <option value=<%=getallcategorys[i].id %>><%= getallcategorys[i].name %>
+                </option>
+                <% } %>
+            </select>
+          </div>
+          <div class="form-outline mb-3">
+            <label class="form-label" for="image"><strong>Image</strong></label>
+            <input class="form-control image" value="" type="text" name="image" id="form4Example2" />
+          </div>
+          <div class="form-outline mb-3">
+            <label class="form-label" for="discription"><strong>discription</strong></label>
+            <textarea class="form-control discription" value="" name="discription" id="discription" rows="4"></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn fw-bold" style="background: #4ba7ed;">Update</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
 
-  <script>
-    // Edite Article
-    document.querySelectorAll('#btn-edit').forEach(function(btn){
-        btn.addEventListener('click',function(event){
-            let select = event.target.closest('.item');
-            let id = select.querySelector('.id').innerHTML;
-            let title = select.querySelector('.title').innerHTML;
-            let categoryId = select.querySelector('.categoryId').innerHTML;
-            let image = select.querySelector('.image').innerHTML;
-            let discription = select.querySelector('.discription').innerHTML;
+<script>
+  // Edite Article
+  document.querySelectorAll('#btn-edit').forEach(function (btn) {
+    btn.addEventListener('click', function (event) {
+      let select = event.target.closest('.item');
+      let id = select.querySelector('.id').innerHTML;
+      let title = select.querySelector('.title').innerHTML;
+      let categoryId = select.querySelector('.categoryId').innerHTML;
+      let image = select.querySelector('.image').innerHTML;
+      let discription = select.querySelector('.discription').innerHTML;
 
-            document.querySelector('#edite .id').value = id;
-            document.querySelector('#edite .title').value = title;
-            document.querySelector('#edite .categoryId').value = categoryId;
-            document.querySelector('#edite .image').value = image;
-            document.querySelector('#edite .discription').value = discription;
-        })
+      document.querySelector('#edite .id').value = id;
+      document.querySelector('#edite .title').value = title;
+      document.querySelector('#edite .categoryId').value = categoryId;
+      document.querySelector('#edite .image').value = image;
+      document.querySelector('#edite .discription').value = discription;
     })
-  </script>
+  })
+</script>
