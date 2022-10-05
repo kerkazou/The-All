@@ -7,38 +7,37 @@ const Article = db.articles;
 const Category = db.categorys;
 
 // Get All Articles
-const getAllArticles = async(req , res) => {
+const getAllArticles = async (req, res) => {
     const getallcategorys = Category.findAll()
     Article.findAll()
-    .then( getallarticles=> {
-        res.render('articles', {getallarticles, getallcategorys})
-    })
-    .catch(()=>
-        {res.send('Error')}
-    )
+        .then(getallarticles => {
+            res.render('articles', { getallarticles, getallcategorys })
+        })
+        .catch(() => { res.send('Error') }
+        )
 }
 
 // Get One Articles
-const getoneArticle = async(req , res) => {
-    let {id} = req.params;
+const getoneArticle = async (req, res) => {
+    let { id } = req.params;
     Article.findByPk(id)
-    .then(article=>
-        {res.json({article}
-    )})
-    .catch(()=>
-        {res.send('Error')}
-    );
+        .then(article => {
+            res.json({ article }
+            )
+        })
+        .catch(() => { res.send('Error') }
+        );
 }
 
 // Add Article
-const addArticle = async(req , res) => {
-    const {body} = req;
-    Article.create({...body})
-    .then(()=>{
-        {res.redirect('/articles')}
-    }).catch(()=>{
-        res.json({Error:'Error'});
-    });
+const addArticle = async (req, res) => {
+    const { body } = req;
+    Article.create({ ...body })
+        .then(() => {
+            { res.redirect('/articles') }
+        }).catch(() => {
+            res.json({ Error: 'Error' });
+        });
 }
 
 // Update Articles
@@ -73,12 +72,12 @@ const deleteArticle = async(req , res) => {
 // Delete Articles
 const countArticle = async(req , res) => {
     Article.count()
-    .then(article=>
-        {res.json({article}
-    )})
-    .catch(()=>
-        {res.send('Error')}
-    );
+        .then(article => {
+            res.json({ article }
+            )
+        })
+        .catch(() => { res.send('Error') }
+        );
 }
 
 
