@@ -1,33 +1,24 @@
+const { json } = require('body-parser');
 const { where } = require('sequelize');
 const db = require('../models');
 
 // Create Main Model
 const Article = db.articles;
-
-// Add Article
-const addArticle = async(req , res) => {
-    const {body} = req;
-    Article.create({...body})
-    .then(()=>{
-        res.json({Success:'Article is added'});
-    }).catch(()=>{
-        res.json({Error:'Article is not added'});
-    });
-
-}
+const Category = db.categorys;
 
 // Get All Articles
 const getAllArticles = async(req , res) => {
-    const getarticles = Article.findAll()
-    .then(article=>
-        {res.json({article}
-    )})
+    const getallcategorys = Category.findAll()
+    Article.findAll()
+    .then( getallarticles=> {
+        res.render('articles', {getallarticles, getallcategorys})
+    })
     .catch(()=>
         {res.send('Error')}
-    );
+    )
 }
 
-// Get All Articles
+// Get One Articles
 const getoneArticle = async(req , res) => {
     let {id} = req.params;
     Article.findByPk(id)
@@ -39,15 +30,26 @@ const getoneArticle = async(req , res) => {
     );
 }
 
+// Add Article
+const addArticle = async(req , res) => {
+    const {body} = req;
+    Article.create({...body})
+    .then(()=>{
+        {res.redirect('/articles')}
+    }).catch(()=>{
+        res.json({Error:'Error'});
+    });
+}
+
 // Update Articles
 const updateArticle = async(req , res) => {
-    let {id} = req.params;
+    let {id} = req.body;
     const {body} = req;
     Article.update({...body}, {where: {
         id:id
     }})
     .then(()=>
-        {res.send('Success')}
+        {res.redirect('/articles')}
     )
     .catch(()=>
         {res.send('Error')}
@@ -56,12 +58,12 @@ const updateArticle = async(req , res) => {
 
 // Delete Articles
 const deleteArticle = async(req , res) => {
-    let {id} = req.params;
+    let {id} = req.body;
     Article.destroy({where: {
         id:id
     }})
     .then(()=>
-        {res.send('Success')}
+        {res.redirect('/articles')}
     )
     .catch(()=>
         {res.send('Error')}
@@ -70,7 +72,6 @@ const deleteArticle = async(req , res) => {
 
 // Delete Articles
 const countArticle = async(req , res) => {
-    let {id} = req.params;
     Article.count()
     .then(article=>
         {res.json({article}
