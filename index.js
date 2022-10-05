@@ -22,6 +22,8 @@ const category = require('./routes/categoriesRouter.js');
 app.use('/categories', category);
 const visiteur = require('./routes/visiteurRouter.js');
 app.use('/visiteurs', visiteur);
+const dashboard = require('./routes/dashboardRouter.js');
+app.use('/dashboard', dashboard);
 
 
 
