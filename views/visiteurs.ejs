@@ -1,0 +1,46 @@
+
+  <%- include('includs/Head_Admin.ejs'); %>
+
+  <div class="position-absolute w-100" style="height: 40vh; background-color: #38B6FF">
+    <div class="d-flex gap-3 mx-3" style="height: 100vh;">
+      <%- include('includs/SidBar_Admin.ejs'); %>
+
+      <div class="position-relative w-100 ">
+        <%- include('includs/Navbar_Admin.ejs'); %>
+
+        <div style="height: 6vh;"></div>
+        <!-- les visiteurs -->
+        <div class=" bg-light w-100 avis" style="height: 80vh; ">
+            <div class="bg-body shadow">
+              <div class="d-flex justify-content-center py-4 p-3 bg-light">
+                <div class="col-lg-3">
+                  <div class="d-flex">
+                    <input class="form-control me-2 shadow-none p-2" type="search" placeholder="Search" aria-label="Search">
+                  </div>
+                </div>
+              </div>
+              <table class="table table-sm table-responsive text-center">
+                  <thead>
+                  <tr>
+                      <th class="col-6">Name</th>
+                      <th class="col-6">Email</th>
+                  </tr>
+                  </thead>
+                  <tbody >
+                    <% for(var i=0; i<getallvisiteurs.length; i++) {%>
+                      <tr>
+                        <td class="col-6"><%= getallvisiteurs[i].name %></td>
+                        <td class="col-6"><%= getallvisiteurs[i].email %></td>
+                      </tr>
+                    <% } %>
+                  </tbody>
+              </table>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  
+
+  <%- include('includs/Footer_Admin.ejs'); %>
