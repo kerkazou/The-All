@@ -13,7 +13,6 @@ const addArticle = async(req , res) => {
     }).catch(()=>{
         res.json({Error:'Article is not added'});
     });
-
 }
 
 // Get All Articles
@@ -27,7 +26,7 @@ const getAllArticles = async(req , res) => {
     );
 }
 
-// Get All Articles
+// Get One Articles
 const getoneArticle = async(req , res) => {
     let {id} = req.params;
     Article.findByPk(id)
@@ -68,7 +67,7 @@ const deleteArticle = async(req , res) => {
     );
 }
 
-// Delete Articles
+// Count Articles
 const countArticle = async(req , res) => {
     let {id} = req.params;
     Article.count()

@@ -12,6 +12,9 @@ const article = require('./routes/articleRouter.js');
 app.use('/articles', article);
 const admin = require('./routes/adminRouter.js');
 app.use('/admins', admin);
+const avis = require('./routes/avisRouter.js');
+app.use('/avis', avis);
+
 
 
 
