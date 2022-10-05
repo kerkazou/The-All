@@ -19,7 +19,7 @@
                   </div>
                 </div>
               </div>
-              <table class="table table-sm table-responsive text-center">
+              <table class="table table-sm table-responsive text-center" id="table">
                   <thead>
                     <tr>
                       <th class="col-2">Commentateur</th>
@@ -29,33 +29,19 @@
                     </tr>
                   </thead>
                   <tbody >
-                    <tr>
-                        <td class="col-2">Amet</td>
-                        <td class="col-4">Amet</td>
-                        <td class="col-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</td>
+                    <% for(var i=0; i<getAllComment.length; i++) { %>
+                      <tr>
+                        <td class="d-none"><%= getAllComment[i].id %></td>
+                        <td class="col-2"><%= getAllComment[i].visiteurId %></td>
+                        <td class="col-2"><%= getAllComment[i].articleId %></td>
+                        <td class="col-6 commentair"><%= getAllComment[i].commentaire %></td>
+
                         <td class="col-2">
-                            <button class="btn" data-bs-toggle="modal" data-bs-target="#edite" ><i class="bi bi-pencil-square fs-4 " style="color: rgb(9, 187, 98);;"></i></button>
-                            <button class="btn"><i class="bi bi-x-octagon-fill fs-4 " style="color:red;"></i></button>                   
+                          <button class="btn" data-bs-toggle="modal" data-bs-target="#edite_commentair" ><i class="bi bi-pencil-square fs-4 " style="color: rgb(9, 187, 98);;"></i></button>
+                          <button type="button" class="btn"><i class="bi bi-x-octagon-fill fs-4 " style="color:red;"></i></button>
                         </td>
-                    </tr>
-                    <tr>
-                        <td class="col-2">Amet</td>
-                        <td class="col-4">Amet</td>
-                        <td class="col-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</td>
-                        <td class="col-2">
-                            <button class="btn" data-bs-toggle="modal" data-bs-target="#edite" ><i class="bi bi-pencil-square fs-4 " style="color: rgb(9, 187, 98);;"></i></button>
-                            <button class="btn"><i class="bi bi-x-octagon-fill fs-4 " style="color:red;"></i></button>                   
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-2">Amet</td>
-                        <td class="col-4">Amet</td>
-                        <td class="col-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</td>
-                        <td class="col-2">
-                            <button class="btn" data-bs-toggle="modal" data-bs-target="#edite" ><i class="bi bi-pencil-square fs-4 " style="color: rgb(9, 187, 98);;"></i></button>
-                            <button class="btn"><i class="bi bi-x-octagon-fill fs-4 " style="color:red;"></i></button>                   
-                        </td>
-                    </tr>
+                      </tr>
+                    <% } %>
                   </tbody>
               </table>
             </div>
@@ -64,26 +50,26 @@
     </div>
     
   </div>
-  </div>
+  
   
   <!-- modal update -->
   <div class="modal fade "  id="edite_commentair" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content " >
         <div class="modal-header  " style="background: #4ba7ed;">
-          <h5 class="modal-title" id="edite_commentair">Modifier commentaires</h5>
+          <h5 class="modal-title" id="edite_comme">Modifier commentaires</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body ">
             <form>  
                 <!-- commentaires input -->
                 <div class="form-outline mb-3">
-                    <label class="form-label"><strong>commentaires</strong></label>
-                  <textarea class="form-control" id="commentaires" rows="4"></textarea>
+                    <label class="form-label" ><strong>commentaires</strong></label>
+                  <textarea class="form-control commentaire" name="commentaires" id="commentaires"  rows="4"></textarea>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn fw-bold" style="background: #4ba7ed;">Modifier </button>
+                    <button type="button" class="btn fw-bold editRowBTn" style="background: #4ba7ed;" onclick="editRow()" >Modifier </button>
                   </div>
               </form>
         </div>
@@ -112,6 +98,32 @@
         assidBar.setAttribute("style", "display: none !important;");
       }
     }
+   
+  // edittable
+    let table =document.getElementById("table");
+    let rIndex;
+    for(let i = 1; i < table.rows.length; i++){
+    table.rows[i].onclick = function(){
+        rIndex = this.rowIndex;
+        console.log(rIndex);
+        document.getElementById("commentaires").value = this.cells[3].innerHTML;
+    };
+}
+            
+            
+// edit the row
+function editRow(){
+  let valuerpw = table.rows[rIndex].cells[3].innerHTML = document.getElementById("commentaires").value;
+    // onclose;
+    localStorage.setItem(rIndex,valuerpw)
+
+   
+}
+
+
+    
+
+    
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
