@@ -1,4 +1,5 @@
 const { where } = require('sequelize');
+const { articles } = require('../models');
 const db = require('../models');
 
 // Create Main Model
