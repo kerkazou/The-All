@@ -23,10 +23,8 @@ const visiteur = require('./routes/visiteurRouter.js');
 app.use('/visiteurs', visiteur);
 const dashboard = require('./routes/dashboardRouter.js');
 app.use('/dashboard', dashboard);
-
 const commentaire = require('./routes/commentaireRouter.js');
 app.use('/commentaires', commentaire);
-
 const profil = require('./routes/profilRouter.js');
 app.use('/profil', profil);
 
@@ -34,5 +32,5 @@ app.use('/profil', profil);
 
 
 // Port
-const PORT = 8081;
+const PORT = 5000;
 app.listen(PORT, () => console.log('Server running on http://localhost:${port}'));
