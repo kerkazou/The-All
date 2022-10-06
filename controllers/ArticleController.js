@@ -8,13 +8,15 @@ const Category = db.categorys;
 
 // Get All Articles
 const getAllArticles = async (req, res) => {
-    const getallcategorys = Category.findAll()
-    Article.findAll()
-        .then(getallarticles => {
-            res.render('articles', { getallarticles, getallcategorys })
+    const data = {};
+    Article.findAll().then(e =>{
+        data.article = e;
+        Category.findAll().then(e =>{
+            data.category = e;
         })
-        .catch(() => { res.send('Error') }
-        )
+        .then(() => { res.render('articles', { data })})
+        .catch(() => { res.send('Error') })
+    })
 }
 
 // Get One Articles
@@ -69,23 +71,11 @@ const deleteArticle = async(req , res) => {
     );
 }
 
-// Delete Articles
-const countArticle = async(req , res) => {
-    Article.count()
-        .then(article => {
-            res.json({ article }
-            )
-        })
-        .catch(() => { res.send('Error') }
-        );
-}
-
 
 module.exports = {
     addArticle,
     getAllArticles,
     getoneArticle,
     updateArticle,
-    deleteArticle,
-    countArticle
+    deleteArticle
 }

@@ -12,17 +12,24 @@ const Visiteur = db.visiteurs;
 
 // Statistique
 const Statistique = async(req , res) => {
-    const article = Article.count()
-    const avis = Avis.count()
-    const category = Category.count()
-    const comment = Comment.count()
-    const visiteur = Visiteur.count()
-        .then(() => {
-            res.render('dashboard', { article, avis, category, comment, visiteur }
-            )
+     const data={}
+      Article.count().then(e =>{
+        data.article = e;
+        Avis.count().then(e=>{
+            data.avis = e;
+            Category.count().then(e=>{
+                data.category = e;
+                Comment.count().then(e=>{
+                    data.comment = e;
+                    Visiteur.count().then(e=>{
+                        data.visiteur = e;
+                    })
+                    .then(() => { res.render('dashboard', { data })})
+                    .catch(() => { res.send('Error') });
+                })
+            })
         })
-        .catch(() => { res.send('Error') }
-        );
+    })
 }
 
 module.exports = {

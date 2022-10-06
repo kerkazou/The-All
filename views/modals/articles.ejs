@@ -16,8 +16,8 @@
           <div class="form-outline mb-3">
             <label for="category"><strong>Category</strong></label>
             <select name="category" id="category" class="form-control">
-              <% for(var i=0; i<getallcategorys.length; i++) {%>
-                <option value=<%=getallcategorys[i].id %>><%= getallcategorys[i].name %>
+              <% for(var i=0; i<data.category.length; i++) {%>
+                <option value=<%=data.category[i].id %>><%= data.category[i].name %>
                 </option>
                 <% } %>
             </select>
@@ -61,8 +61,8 @@
             <div class="form-outline mb-3">
               <label for="category"><strong>Category</strong></label>
               <select class="form-control categoryId" value="" name="category" id="category">
-                <% for(var i=0; i<getallcategorys.length; i++) {%>
-                  <option value=<%= getallcategorys[i].id %>><%= getallcategorys[i].name %></option>
+                <% for(var i=0; i<data.category.length; i++) {%>
+                  <option value=<%= data.category[i].id %>><%= data.category[i].name %></option>
                 <% } %>
             </select>
           </div>
