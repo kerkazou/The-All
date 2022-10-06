@@ -18,6 +18,8 @@ const article = require('./routes/articleRouter.js');
 app.use('/articles', article);
 const admin = require('./routes/adminRouter.js');
 app.use('/admins', admin);
+const avis = require('./routes/avisRouter.js');
+app.use('/avis', avis);
 const category = require('./routes/categoriesRouter.js');
 app.use('/categories', category);
 const visiteur = require('./routes/visiteurRouter.js');
