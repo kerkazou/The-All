@@ -1,0 +1,43 @@
+ <!-- modal update -->
+ <div class="modal fade"  id="edite" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header" style="background: #4ba7ed;">
+        <h5 class="modal-title" id="edite_comme">Modifier commentaires</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <form action="Commentaires/editCommentaire" method="post">  
+            <div class="form-outline mb-3 d-none">
+              <label class="form-label" for="id"><strong>Id</strong></label>
+              <input type="text" name="id" id="id" class="form-control id" />
+            </div>
+            <div class="form-outline mb-3">
+              <label class="form-label" for="commentaires"><strong>commentaires</strong></label>
+              <textarea class="form-control commentaires" name="commentaire" id="commentaires"  rows="4"></textarea>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn fw-bold editRowBTn" style="background: #4ba7ed;">Update</button>
+            </div>
+          </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+<script>
+  // edittable
+  document.querySelectorAll('#edit-comment').forEach(function (btn) {
+    btn.addEventListener('click', function (event) {
+      let select = event.target.closest('.item');
+      let id = select.querySelector('.id').innerHTML;
+      let commentaire = select.querySelector('.commentaires').innerHTML;
+
+      document.querySelector('#edite .id').value = id;
+      document.querySelector('#edite .commentaires').value = commentaire;
+    })
+  })
+</script>
