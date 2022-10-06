@@ -42,13 +42,13 @@ const addCommentaire = async(req , res) => {
 
 // Update Comment
     const updateComment = async(req , res) => {
-        let {id} = req.params;
+        const {id} = req.body;
         const {body} = req;
         Commentaire.update({...body}, {where: {
             id:id
         }})
         .then(()=>
-            {res.send('Success')}
+            {res.redirect('/commentaires')}
         )
         .catch(()=>
             {res.send('Error')}
