@@ -16,8 +16,8 @@
           <div class="form-outline mb-3">
             <label for="category"><strong>Category</strong></label>
             <select name="category" id="category" class="form-control">
-              <% for(var i=0; i<getallcategorys.length; i++) {%>
-                <option value=<%=getallcategorys[i].id %>><%= getallcategorys[i].name %>
+              <% for(var i=0; i<data.category.length; i++) {%>
+                <option value=<%=data.category[i].id %>><%= data.category[i].name %>
                 </option>
                 <% } %>
             </select>
@@ -40,31 +40,29 @@
   </div>
 </div>
 
-<!-- modal update -->
-<div class="modal fade" id="edite" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-  aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header" style="background: #4ba7ed;">
-        <h5 class="modal-title">Modifier Article</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form action="articles/editeArticle" method="post" id="form_edite">
-          <div class="form-outline mb-3 d-none">
-            <label for="id"><strong>id</strong></label>
-            <input class="form-control id" value="" type="text" name="id" id="titlt" />
-          </div>
-          <div class="form-outline mb-3">
-            <label for="title"><strong>Title</strong></label>
-            <input class="form-control title" value="" type="text" name="title" id="titlt" />
-          </div>
-          <div class="form-outline mb-3">
-            <label for="category"><strong>Category</strong></label>
-            <select class="form-control categoryId" value="" name="category" id="category">
-              <% for(var i=0; i<getallcategorys.length; i++) {%>
-                <option value=<%=getallcategorys[i].id %>><%= getallcategorys[i].name %>
-                </option>
+  <!-- modal update -->
+  <div class="modal fade" id="edite" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header" style="background: #4ba7ed;">
+          <h5 class="modal-title">Modifier Article</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="articles/editeArticle" method="post">
+            <div class="form-outline mb-3 d-none">
+              <label for="id"><strong>id</strong></label>
+              <input class="form-control id" value="" type="text" name="id" id="titlt"/>
+            </div>
+            <div class="form-outline mb-3">
+              <label for="title"><strong>Title</strong></label>
+              <input class="form-control title" value="" type="text" name="title" id="titlt"/>
+            </div>
+            <div class="form-outline mb-3">
+              <label for="category"><strong>Category</strong></label>
+              <select class="form-control categoryId" value="" name="category" id="category">
+                <% for(var i=0; i<data.category.length; i++) {%>
+                  <option value=<%= data.category[i].id %>><%= data.category[i].name %></option>
                 <% } %>
             </select>
           </div>
