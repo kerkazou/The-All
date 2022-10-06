@@ -29,30 +29,19 @@
                   </tr>
                   </thead>
                   <tbody >
-                    <tr>
-                        <td class="col-4">Amet</td>
-                        <td class="col-4">Amet</td>
-                        <td class="col-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</td>
+                    <% for(var i=0; i<getallavis.length; i++) {%>
+                      <tr>
+                        <td class="col-4"><%= getallavis[i].avis %></td>
+                        <td class="col-4"><%= getallavis[i].articleId %></td>
+                        <td class="col-3"><%= getallavis[i].visiteurId %></td>
                         <td class="col-1">
-                            <button class="btn"><i class="bi bi-x-octagon-fill fs-4 " style="color:red;"></i></button>                   
+                            <form action='/avis/delete' method="post">
+                              <input type="hidden" value=<%= getallavis[i].id %> name="id"/>
+                              <button value="id" type="submit" class="btn"><i class="bi bi-x-octagon-fill fs-4 " style="color:red;"></i></button>
+                            </form>                  
                         </td>
-                    </tr>
-                    <tr>
-                        <td class="col-4">Amet</td>
-                        <td class="col-4">Amet</td>
-                        <td class="col-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</td>
-                        <td class="col-1">
-                            <button class="btn"><i class="bi bi-x-octagon-fill fs-4 " style="color:red;"></i></button>                   
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-4">Amet</td>
-                        <td class="col-4">Amet</td>
-                        <td class="col-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</td>
-                        <td class="col-1">
-                            <button class="btn"><i class="bi bi-x-octagon-fill fs-4 " style="color:red;"></i></button>                   
-                        </td>
-                    </tr>
+                      </tr>
+                    <%}%>
                   </tbody>
               </table>
             </div>
@@ -60,32 +49,6 @@
       </div>
     </div>
   </div>
-  </div>
-  
-  <!-- modal update -->
-  <div class="modal fade "  id="edite_commentair" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content " >
-        <div class="modal-header  " style="background: #4ba7ed;">
-          <h5 class="modal-title" id="edite_commentair">Modifier commentaires</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body ">
-            <form>  
-                <!-- commentaires input -->
-                <div class="form-outline mb-3">
-                    <label class="form-label"><strong>commentaires</strong></label>
-                  <textarea class="form-control" id="commentaires" rows="4"></textarea>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn fw-bold" style="background: #4ba7ed;">Modifier </button>
-                  </div>
-              </form>
-        </div>
-        
-      </div>
-    </div>
   </div>
 
   <script>
