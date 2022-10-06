@@ -57,12 +57,12 @@ const addCommentaire = async(req , res) => {
 
 // Delete Comment
     const deleteComment = async(req , res) => {
-        let {id} = req.params;
+        let {id} = req.body;
         Commentaire.destroy({where: {
             id:id
         }})
         .then(()=>
-            {res.send('Success')}
+            {res.redirect('/commentaires')}
         )
         .catch(()=>
             {res.send('Error')}

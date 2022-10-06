@@ -28,18 +28,23 @@
                       <th class="col-2"></th>
                     </tr>
                   </thead>
-                  <tbody >
+                  <tbody>
                     <% for(var i=0; i<getAllComment.length; i++) { %>
                       <tr>
                         <td class="d-none"><%= getAllComment[i].id %></td>
                         <td class="col-2"><%= getAllComment[i].visiteurId %></td>
                         <td class="col-2"><%= getAllComment[i].articleId %></td>
                         <td class="col-6 commentair"><%= getAllComment[i].commentaire %></td>
-
                         <td class="col-2">
-                          <button class="btn" data-bs-toggle="modal" data-bs-target="#edite_commentair" ><i class="bi bi-pencil-square fs-4 " style="color: rgb(9, 187, 98);;"></i></button>
-                          <button type="button" class="btn"><i class="bi bi-x-octagon-fill fs-4 " style="color:red;"></i></button>
-                        </td>
+                          <div class="d-flex">
+                            <button class="btn" data-bs-toggle="modal" data-bs-target="#edite_commentair" ><i class="bi bi-pencil-square fs-4 " style="color: rgb(9, 187, 98);;"></i></button>
+                            <form method="post" action="commentaires/delete">
+                              <input type="hidden" name="id" value=<%= getAllComment[i].id %>>
+                              <button value="id" type="submit" class="btn"><i class="bi bi-x-octagon-fill fs-4 " style="color:red;"></i></button>  
+                            </form>
+                          </div>  
+                        </td>                    
+                      </td>
                       </tr>
                     <% } %>
                   </tbody>
