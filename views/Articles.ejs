@@ -33,18 +33,18 @@
               </tr>
               </thead>
               <tbody>
-                <% for(var i=0; i<getallarticles.length; i++) {%>
+                <% for(var i=0; i<data.article.length; i++) {%>
                   <tr class="item">
-                    <td class="d-none id"><%= getallarticles[i].id %></td>
-                    <td class="col-2 title name-row"><%= getallarticles[i].title %></td>
-                    <td class="col-2 categoryId"><%= getallarticles[i].categoryId %></td>
-                    <td class="col-2 image"><%= getallarticles[i].image %></td>
-                    <td class="col-4 discription"><%= getallarticles[i].discription %></td>
+                    <td class="d-none id"><%= data.article[i].id %></td>
+                    <td class="col-2 title name-row"><%= data.article[i].title %></td>
+                    <td class="col-2 categoryId"><%= data.article[i].categoryId %></td>
+                    <td class="col-2 image"><%= data.article[i].image %></td>
+                    <td class="col-4 discription"><%= data.article[i].discription %></td>
                     <td class="col-2">
                       <div class="d-flex">
                         <button class="btn" data-bs-toggle="modal" data-bs-target="#edite" id="btn-edit"><i class="bi bi-pencil-square fs-4 " style="color: rgb(9, 187, 98);;"></i></button>
                         <form method="post" action="articles/delete">
-                          <input type="hidden" name="id" value=<%= getallarticles[i].id %>>
+                          <input type="hidden" name="id" value=<%= data.article[i].id %>>
                           <button value="id" type="submit" class="btn"><i class="bi bi-x-octagon-fill fs-4 " style="color:red;"></i></button>  
                         </form>
                       </div>

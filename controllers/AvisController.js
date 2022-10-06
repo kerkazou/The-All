@@ -29,21 +29,8 @@ const deleteAvis = async(req , res) => {
     );
 }
 
-// Count Avis
-const countAvis = async(req , res) => {
-    let {id} = req.params;
-    Avis.count()
-    .then(avis=>
-        {res.json({avis}
-    )})
-    .catch(()=>
-        {res.send('Error')}
-    );
-}
-
 
 module.exports = {
     getAllAvis,
-    deleteAvis,
-    countAvis
+    deleteAvis
 }
