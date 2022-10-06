@@ -15,7 +15,7 @@
             <div class="d-flex justify-content-between pt-3 p-3 bg-light">
               <div>
                 <div class="d-flex" role="search">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <input class="form-control me-2" id="search" type="search" placeholder="Search" aria-label="Search">
                 </div>                  
               </div>
               <div class=" d-flex justify-content-md-end">
@@ -26,126 +26,57 @@
               <thead>
               <tr>
                   <th class="col-2">Title</th>
+                  <th class="col-2">Category</th>
                   <th class="col-2">Image</th>
-                  <th class="col-6">Discrption</th>
+                  <th class="col-4">Discrption</th>
                   <th class="col-2"></th>
               </tr>
               </thead>
               <tbody>
-                <tr>
-                    <td class="col-2">Amet</td>
-                    <td class="col-2">Sit</td>
-                    <td class="col-6">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</td>
+                <% for(var i=0; i<getallarticles.length; i++) {%>
+                  <tr class="item">
+                    <td class="d-none id"><%= getallarticles[i].id %></td>
+                    <td class="col-2 title name-row"><%= getallarticles[i].title %></td>
+                    <td class="col-2 categoryId"><%= getallarticles[i].categoryId %></td>
+                    <td class="col-2 image"><%= getallarticles[i].image %></td>
+                    <td class="col-4 discription"><%= getallarticles[i].discription %></td>
                     <td class="col-2">
-                        <button class="btn" data-bs-toggle="modal" data-bs-target="#edite" ><i class="bi bi-pencil-square fs-4 " style="color: rgb(9, 187, 98);;"></i></button>
-                        <button class="btn"><i class="bi bi-x-octagon-fill fs-4 " style="color:red;"></i></button>                   
+                      <div class="d-flex">
+                        <button class="btn" data-bs-toggle="modal" data-bs-target="#edite" id="btn-edit"><i class="bi bi-pencil-square fs-4 " style="color: rgb(9, 187, 98);;"></i></button>
+                        <form method="post" action="articles/delete">
+                          <input type="hidden" name="id" value=<%= getallarticles[i].id %>>
+                          <button value="id" type="submit" class="btn"><i class="bi bi-x-octagon-fill fs-4 " style="color:red;"></i></button>  
+                        </form>
+                      </div>
                     </td>
-                </tr>
-                <tr>
-                    <td class="col-2">Amet</td>
-                    <td class="col-2">Sit</td>
-                    <td class="col-6">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</td>
-                    <td class="col-2">
-                        <button class="btn" data-bs-toggle="modal" data-bs-target="#edite" ><i class="bi bi-pencil-square fs-4 " style="color: rgb(9, 187, 98);;"></i></button>
-                        <button class="btn"><i class="bi bi-x-octagon-fill fs-4 " style="color:red;"></i></button>                   
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-2">Amet</td>
-                    <td class="col-2">Sit</td>
-                    <td class="col-6">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</td>
-                    <td class="col-2">
-                        <button class="btn" data-bs-toggle="modal" data-bs-target="#edite" ><i class="bi bi-pencil-square fs-4 " style="color: rgb(9, 187, 98);;"></i></button>
-                        <button class="btn"><i class="bi bi-x-octagon-fill fs-4 " style="color:red;"></i></button>                   
-                    </td>
-                </tr>
+                  </tr>
+                <% } %>
               </tbody>
             </table>
           </div>
         </div>
       </div>
-
-    </div>
-    
-  </div>
-  </div>
-  <!-- modal add -->
-  <div class="modal fade "  id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content " >
-        <div class="modal-header  " style="background: #4ba7ed;">
-          <h5 class="modal-title" id="staticBackdropLabel">Ajouter Article</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body ">
-            <form>
-                <!-- titlt input -->
-                <div class="form-outline mb-3">
-                    <label ><strong>Title</strong></label>
-                  <input type="text" id="titlt" class="form-control" />
-                </div>
-              
-                <!-- image input -->
-                <div class="form-outline mb-3">
-                    <label class="form-label" for="image"><strong>Image</strong></label>
-
-                  <input type="file" id="form4Example2" class="form-control" />
-                </div>
-              
-                <!-- discription input -->
-                <div class="form-outline mb-3">
-                    <label class="form-label" for="discription"><strong>discription</strong></label>
-
-                  <textarea class="form-control" id="discription" rows="4"></textarea>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn fw-bold" style="background: #4ba7ed;">Ajouter </button>
-                  </div>
-              </form>
-        </div>
-        
-      </div>
     </div>
   </div>
-  <!-- modal update -->
-  <div class="modal fade "  id="edite" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content " >
-        <div class="modal-header  " style="background: #4ba7ed;">
-          <h5 class="modal-title" id="edite">Modifier Article</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body ">
-            <form>
-                <!-- Name input -->
-                <div class="form-outline mb-3">
-                    <label class="form-label" for="form4Example1"><strong>Title</strong></label>
-                  <input type="text" id="form4Example1" class="form-control" />
-                </div>
-              
-                <!-- Email input -->
-                <div class="form-outline mb-3">
-                    <label class="form-label" for="form4Example2"><strong>Image</strong></label>
-
-                  <input type="email" id="form4Example2" class="form-control" />
-                </div>
-              
-                <!-- Message input -->
-                <div class="form-outline mb-3">
-                    <label class="form-label" for="form4Example3"><strong>discription</strong></label>
-
-                  <textarea class="form-control" id="form4Example3" rows="4"></textarea>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn fw-bold" style="background: #4ba7ed;">Modifier </button>
-                  </div>
-              </form>
-        </div>
-        
-      </div>
-    </div>
   </div>
+
+  <%- include('modals/articles.ejs'); %>
+
+  <script>
+    // Search
+    let searchInput = document.getElementById('search')
+    searchInput.addEventListener('input', function () {
+      let value = searchInput.value.toUpperCase()
+      let columns = [...document.querySelectorAll('.name-row')]
+      columns.forEach(column => {
+        if (!column.textContent.toUpperCase().trim().includes(value)) {
+          column.parentElement.style.display = 'none';
+        }
+        else {
+          column.parentElement.style.display = 'table-row';
+        }
+      })
+    })
+  </script>
 
   <%- include('includs/Footer_Admin.ejs'); %>

@@ -46,5 +46,6 @@ db.articles.hasMany(db.comments);
 db.visiteurs.hasMany(db.comments);
 db.articles.hasMany(db.avis);
 db.visiteurs.hasMany(db.avis);
+db.categorys.hasMany(db.articles);
 
 module.exports = db;

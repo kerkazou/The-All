@@ -1,0 +1,78 @@
+<!-- modal add -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header" style="background: #4ba7ed;">
+        <h5 class="modal-title" id="staticBackdropLabel">Ajouter un categories</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body ">
+        <form action="/categories/addCategory" method="post">
+          <div class="form-outline mb-3">
+            <label class="form-label" for="form4Example1"><strong>Name de categories</strong></label>
+            <input type="text" name="name" id="form4Example1" class="form-control shadow-none" />
+          </div>
+          <div class="form-outline mb-3">
+            <label class="form-label" for="form4Example3"><strong>discription</strong></label>
+            <textarea class="form-control shadow-none" name="discription" id="form4Example3" rows="4"></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn fw-bold" style="background: #4ba7ed;">Ajouter </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal update -->
+<div class="modal fade" id="edite" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header" style="background: #4ba7ed;">
+        <h5 class="modal-title" id="edite">Modifier categories</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="/categories/editeCategory" method="post">
+          <div class="form-outline mb-3 d-none">
+            <label class="form-label" for="id"><strong>Id</strong></label>
+            <input class="form-control id" type="text" name="id" id="id" />
+          </div>
+          <div class="form-outline mb-3">
+            <label class="form-label" for="name"><strong>Name de categories</strong></label>
+            <input class="form-control name" type="text" name="name" id="name" />
+          </div>
+          <div class="form-outline mb-3">
+            <label class="form-label" for="discription"><strong>Discription</strong></label>
+            <textarea class="form-control discription" name="discription" id="discription" rows="4"></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn fw-bold" style="background: #4ba7ed;">Update</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  // Edite Article
+  document.querySelectorAll('#btn-edit').forEach(function (btn) {
+    btn.addEventListener('click', function (event) {
+      let select = event.target.closest('.item');
+      let id = select.querySelector('.id').innerHTML;
+      let name = select.querySelector('.name').innerHTML;
+      let discription = select.querySelector('.discription').innerHTML;
+
+      document.querySelector('#edite .id').value = id.trim();
+      document.querySelector('#edite .name').value = name.trim();
+      document.querySelector('#edite .discription').value = discription.trim();
+    })
+  })
+</script>

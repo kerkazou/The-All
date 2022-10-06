@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
         avis: {
             type: DataTypes.TEXT,
             allowNull: false
-        }
+        },
     })
     return Avis;
 }
