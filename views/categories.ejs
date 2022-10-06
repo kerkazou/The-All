@@ -76,7 +76,7 @@
         let value = searchInput.value.toUpperCase()
         let columns = [...document.querySelectorAll('.name-row')]
         columns.forEach(column => {
-          if (!column.textContent.toUpperCase().trim().startsWith(value)) {
+          if (!column.textContent.toUpperCase().trim().includes(value)) {
             column.parentElement.style.display = 'none';
           }
           else {
