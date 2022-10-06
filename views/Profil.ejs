@@ -22,26 +22,30 @@
                     <div class="d-lg-inline-block py-2 px-5 px-sm-3 mb-4 col-lg-12 rounded">
                       <span style="color: #38B6FF;" class="fs-2 fw-bold">Edite Profile</span>
                     </div>
-                    <form class="d-flex flex-column gap-3">
+                    <form class="d-flex flex-column gap-3" action="Profil/updateProfil" method="post">
+                      <div class="d-none">
+                        <label for="first_name">First Name :</label>
+                        <input class="form-control" value='<%= getprofil.id %>' name="id" id="id" type="text" placeholder="Id">
+                      </div>
                       <div>
                         <label for="first_name">First Name :</label>
-                        <input class="form-control" id="first_name" type="text" placeholder="First Name">
+                        <input class="form-control" value='<%= getprofil.first_name %>' name="first_name" id="first_name" type="text" placeholder="First Name">
                       </div>
                       <div>
                         <label for="first_name">Last Name :</label>
-                        <input class="form-control" id="last_name" type="text" placeholder="Last Name">
+                        <input class="form-control" value='<%= getprofil.last_name %>' name="last_name" id="last_name" type="text" placeholder="Last Name">
                       </div>
                       <div>
                         <label for="first_name">Email :</label>
-                        <input class="form-control" id="email" type="text" placeholder="Email">
+                        <input class="form-control" value='<%= getprofil.email %>' name="email" id="email" type="text" placeholder="Email">
                       </div>
                       <div>
                         <label for="first_name">Phone :</label>
-                        <input class="form-control" id="phone" type="text" placeholder="Phone">
+                        <input class="form-control" value='<%= getprofil.phone %>' name="phone" id="phone" type="text" placeholder="Phone">
                       </div>
                       <div>
                         <label for="first_name">Password :</label>
-                        <input class="form-control" id="password" type="text" placeholder="Password">
+                        <input class="form-control" value='<%= getprofil.password%>' name="password" id="password" type="password" placeholder="Password">
                       </div>
                       <div>
                         <input class="btn px-5 py-2" type="submit" id="valider" value="Valider">
