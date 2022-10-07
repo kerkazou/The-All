@@ -22,7 +22,7 @@ const getAll = async(req , res) => {
 
 // Get One
 const getone = async (req, res) => {
-    res.render('The-all')
+    res.render('The-all-article')
 }
 
 
