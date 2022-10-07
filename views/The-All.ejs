@@ -16,8 +16,8 @@
                                     <%= data.category[i].name %>
                                 </a></span>
                             <span class="text-dark">','</span>
-                            <% } %>
-                                <span><a href="#blog">...</a></span>
+                        <% } %>
+                            <span><a href="#blog">...</a></span>
                     </div>
                     <div>]</div>
                 </div>
@@ -34,14 +34,14 @@
                 <div class="col-md-6 col-11 position-absolute d-flex justify-content-center shadow bg-body"
                     id="article_tandance">
                     <div id="image" class="col-4 d-flex justify-content-center align-items-center">
-                        <img src="assets/image-article/article1.jpg" alt="article-1">
+                        <img src="/assets/image-article/article1.jpg" alt="article-1">
                     </div>
                     <div id="text" class="col-8 d-flex flex-column justify-content-between px-3">
-                        <a href="The-All-Article?Article=0" id="title">Title</a>
+                        <a href="the-all/1" id="title">Title</a>
                         <div id="categorie">Categorie</div>
                         <div id="discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam modi sunt
                             vel explicabo doloremque.</div>
-                        <a href="The-All-Article?Article=0" id="lire_suite">Lire la suite ...</a>
+                        <a href="the-all/1" id="lire_suite">Lire la suite ...</a>
                         <div id="action">
                             <div class="float-start" id="action_avis">
                                 <i class="bi bi-hand-thumbs-up h4" type="button"></i>
@@ -74,12 +74,13 @@
             <div class="col-md-11 col-12" id="content">
                 <!-- Article -->
                 <div class="d-flex flex-wrap justify-content-center align-items-center p-3">
+                    <% if(data.article.length>0){ %>
                     <% for(var i=0; i<data.article.length; i++){ %>
                         <div class="col-md-3 col-sm-6 col-6 p-2 articles">
                             <div class="card">
-                                <img class="card-img-top" src="assets/image-article/article1.jpg" alt="article1">
+                                <img class="card-img-top" src="/assets/image-article/article1.jpg" alt="article1">
                                 <div class="p-2">
-                                    <div class="title"><a href="The-All-Article/<%= data.article[i].id %>">
+                                    <div class="title"><a href="the-all/<%= data.article[i].id %>">
                                             <%= data.article[i].title %>
                                         </a></div>
                                     <div class="categorie">
@@ -88,7 +89,7 @@
                                     <div class="discription">
                                         <%= data.article[i].discription %>
                                     </div>
-                                    <a href="The-All-Article/<%= data.article[i].id %>" class="lire_suite">Lire la suite
+                                    <a href="the-all/<%= data.article[i].id %>" class="lire_suite">Lire la suite
                                         ...</a>
                                     <div class="px-2 mt-1" id="action">
                                         <div class="float-start" id="action_avis">
@@ -102,7 +103,10 @@
                                 </div>
                             </div>
                         </div>
-                        <% } %>
+                    <% } %>
+                    <% }else{ %>
+                        <h1 class="my-5">Pas des articles actuellement</h1>
+                    <% } %>
                 </div>
             </div>
             <nav aria-label="Page navigation example">
@@ -124,7 +128,7 @@
             <div class="text-uppercase" id="title">About Us</div>
             <div class="card col-md-5 col-sm-6 col-11 mt-5">
                 <img class="card-img-top rounded-circle bg-white shadow-1-strong d-flex align-items-center justify-content-center mb-4 mx-auto"
-                    style="width: 200px; height: 200px;" src="assets/the_all.png" alt="">
+                    style="width: 200px; height: 200px;" src="/assets/the_all.png" alt="">
                 <div class="d-flex flex-column justify-content-center align-items-center gap-3 p-2">
                     <div id="name">The All</div>
                     <div class="w-75 text-center" id="discription">Lorem ipsum dolor sit, amet consectetur adipisicing
