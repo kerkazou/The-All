@@ -13,8 +13,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Routers
-const the_all1 = require('./routes/the_allRouter.js');
-app.use('/the-all', the_all1);
+const the_all = require('./routes/the_allRouter.js');
+app.use('/the-all', the_all);
 const dashboard = require('./routes/dashboardRouter.js');
 app.use('/dashboard', dashboard);
 const profil = require('./routes/profilRouter.js');
@@ -34,5 +34,5 @@ app.use('/commentaires', commentaire);
 
 
 // Port
-const PORT = 5000;
+const PORT = 5007;
 app.listen(PORT, () => console.log('Server running on http://localhost:${port}'));

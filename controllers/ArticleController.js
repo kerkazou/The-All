@@ -12,6 +12,8 @@ const getAllArticles = async (req, res) => {
     Article.findAll().then(e =>{
         data.article = e;
         Category.findAll().then(e =>{
+            data.category = e;
+        })
         .then(() => { res.render('articles', { data })})
         .catch(() => { res.send('Error') })
     })

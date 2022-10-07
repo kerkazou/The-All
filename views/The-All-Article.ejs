@@ -25,7 +25,7 @@
             </div>
             <div class="float-end">
               <div class="btn position-relative">
-                <i class="bi bi-chat-square-dots h3" onclick="addCommontaire1()" type="button"></i>
+                <i class="bi bi-chat-square-dots h3" data-bs-toggle="modal" data-bs-target="#staticBackdrop" type="button"></i>
                 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info">
                   <%= data.comment.length %>
                 </span>
@@ -89,4 +89,37 @@
         </div>
     </div>
 
-  <%- include('includs/Footer.ejs') %>
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Create Commentaire</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form action="/the-all/addCommentaire" method="post">
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Name</label>
+            <input type="email" name="name" class="form-control" id="exampleFormControlInput1" placeholder="Name Complete">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+            <input type="email" class="form-control" name="email" id="exampleFormControlInput1" placeholder="name@example.com">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Commentaire</label>
+            <textarea class="form-control" name="commentaire" id="exampleFormControlTextarea1" rows="3" placeholder="Commentaire"></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<%- include('includs/Footer.ejs') %>

@@ -35,8 +35,20 @@ const getone = async (req, res) => {
     })
 }
 
+// Add commantaire
+const addCommentaire = async(req , res) => {
+    const {body} = req;
+    Comment.create({...body})
+    .then(()=>{
+        res.redirect('The-all-article');
+    }).catch(()=>{
+        res.json({Error:'commentaire is not added'});
+    })
+}
+
 
 module.exports = {
     getAll,
-    getone
+    getone,
+    addCommentaire
 }

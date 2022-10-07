@@ -4,19 +4,6 @@ const db = require('../models');
 // Create Main Model
 const Commentaire = db.comments;
 
-
-// Add commantaire
-const addCommentaire = async(req , res) => {
-    const {body} = req;
-    Commentaire.create({...body})
-    .then(()=>{
-        res.json({Success:'commentaire is added'});
-    }).catch(()=>{
-        res.json({Error:'commentaire is not added'});
-    })
-}
-
-
 // Get All Comments
     const getAllComment = async(req , res) => {
         Commentaire.findAll()
@@ -73,10 +60,8 @@ const addCommentaire = async(req , res) => {
 
 
 module.exports = {
-    addCommentaire,
     getAllComment,
     getoneComment,
     updateComment,
-    deleteComment,
-    // countArticle
+    deleteComment
 }
