@@ -22,7 +22,15 @@ const getAll = async(req , res) => {
 
 // Get One
 const getone = async (req, res) => {
-    res.render('The-all-article')
+    const data = {};
+    Article.findOne().then(e =>{
+        data.article = e;
+        Category.findAll().then(e =>{
+            data.category = e;
+        })
+        .then(() => { res.render('The-all-article', { data })})
+        .catch(() => { res.send('Error') })
+    })
 }
 
 
