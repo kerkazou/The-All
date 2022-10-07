@@ -21,11 +21,10 @@ const getAllArticles = async (req, res) => {
 
 // Get One Articles
 const getoneArticle = async (req, res) => {
-    let { id } = req.params;
+    const { id } = req.params;
     Article.findByPk(id)
         .then(article => {
-            res.json({ article }
-            )
+            res.json({ article })
         })
         .catch(() => { res.send('Error') }
         );
