@@ -10,21 +10,29 @@
           <img class="w-75" src="/assets/image-article/article1.jpg" alt="">
           <div class="w-75 d-flex justify-content-between">
             <div class="float-start">
-                <i class="bi bi-hand-thumbs-up h4" type="button"></i>
-                <i class="bi bi-hand-thumbs-down h4" type="button"></i>
-            </div>
-            <div class="float-end">
-              <button type="button" class="btn position-relative">
-                <i class="bi bi-chat-square-dots h4" onclick="addCommontaire1()" type="button"></i>
-                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              <div class="btn position-relative">
+                <i class="bi bi-hand-thumbs-up h3" type="button"></i>
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info">
                   <%= data.comment.length %>
                 </span>
-              </button>
+              </div>
+              <div class="btn position-relative">
+                <i class="bi bi-hand-thumbs-down h3" type="button"></i>
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info">
+                  <%= data.comment.length %>
+                </span>
+              </div>
+            </div>
+            <div class="float-end">
+              <div class="btn position-relative">
+                <i class="bi bi-chat-square-dots h3" onclick="addCommontaire1()" type="button"></i>
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info">
+                  <%= data.comment.length %>
+                </span>
+              </div>
             </div>
           </div>
           <div class="w-75 commentaire gap-3 rounded p-3 shadow-sm" id="add_commontaire1">
-            <input class="form-control" type="text" placeholder="UserName">
-            <input class="form-control" type="text" placeholder="Email">
             <textarea cols="30" rows="10" placeholder="Message..." style="max-height: 80px;"></textarea>
             <input class="btn btn-primary w-25" type="submit" value="Send">
           </div>
@@ -35,16 +43,29 @@
             <img class="w-100" src="/assets/image-article/article1.jpg" alt="">
             <div class="w-100 d-flex justify-content-between">
               <div class="float-start">
-                  <i class="bi bi-hand-thumbs-up h4" type="button"></i>
-                  <i class="bi bi-hand-thumbs-down h4" type="button"></i>
+                <div class="btn position-relative">
+                  <i class="bi bi-hand-thumbs-up h3" type="button"></i>
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info">
+                    <%= data.comment.length %>
+                  </span>
+                </div>
+                <div class="btn position-relative">
+                  <i class="bi bi-hand-thumbs-down h3" type="button"></i>
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info">
+                    <%= data.comment.length %>
+                  </span>
+                </div>
               </div>
               <div class="float-end">
-                <i class="bi bi-chat-square-dots h4" onclick="addCommontaire2()" type="button"></i>
+                <div class="btn position-relative">
+                  <i class="bi bi-chat-square-dots h3" onclick="addCommontaire2()" type="button"></i>
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info">
+                    <%= data.comment.length %>
+                  </span>
+                </div>
               </div>
             </div>
             <div class="w-100 commentaire gap-3 rounded p-3 shadow-sm" id="add_commontaire2">
-              <input class="form-control" type="text" placeholder="UserName">
-              <input class="form-control" type="text" placeholder="Email">
               <textarea cols="30" rows="10" placeholder="Message..." style="max-height: 80px;"></textarea>
               <input class="btn btn-primary w-25" type="submit" value="Send">
             </div>
