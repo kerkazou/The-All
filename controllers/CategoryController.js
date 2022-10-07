@@ -16,7 +16,7 @@ const addCategory = async (req, res) => {
 }
 
 // Get All Articles
-const getAllCategories = async (req, res) => {
+const getAllCategories = async(req, res) => {
     Category.findAll()
         .then(getallcategories => {
             res.render('categories', { getallcategories }
