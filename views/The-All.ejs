@@ -66,8 +66,8 @@
                 </div>
                 <% for(var i=0; i<data.category.length; i++){ %>
                     <div>
-                        <input type="radio" name="buttonCategorie" value="Sport" id="sport">
-                        <label class="btn" for="sport"><%= data.category[i].name %> </label>
+                        <input type="radio" name="buttonCategorie" value=<%=data.category[i].id%> id=<%=data.category[i].name%>>
+                        <label class="btn" for=<%=data.category[i].name%>><%= data.category[i].name %></label>
                     </div>
                 <% } %>
             </div>
