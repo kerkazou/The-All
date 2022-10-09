@@ -3,16 +3,27 @@ const db = require('../models');
 
 // Create Main Model
 const Commentaire = db.comments;
+const Visiteur = db.visiteurs;
 
 
 // Add commantaire
 const addCommentaire = async(req , res) => {
-    const {body} = req;
-    Commentaire.create({...body})
-    .then(()=>{
-        res.json({Success:'commentaire is added'});
+    const data = {};
+    Visiteur.create({
+        name: req.body.name,
+        email: req.body.email
+    }).then(e=>{
+        data.visiteur = e;
+        Commentaire.create({
+            commentaire: req.body.commentaire,
+            articleId: req.body.articleId,
+            visiteurId: data.visiteur.id
+        })
+        .then(()=>{
+            res.redirect('/The-all/'+req.body.articleId);
+        })
     }).catch(()=>{
-        res.json({Error:'commentaire is not added'});
+        res.json({Error:'Error'});
     })
 }
 

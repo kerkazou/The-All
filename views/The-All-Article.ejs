@@ -11,21 +11,21 @@
           <div class="w-75 d-flex justify-content-between">
             <div class="float-start">
               <div class="btn position-relative">
-                <i class="bi bi-hand-thumbs-up h3" type="button"></i>
+                <i class="bi bi-hand-thumbs-up h3" type="button" data-bs-toggle="modal" data-bs-target="#modalLike"></i>
                 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info">
-                  <%= data.comment.length %>
+                  <%= data.likeAvis %>
                 </span>
               </div>
               <div class="btn position-relative">
-                <i class="bi bi-hand-thumbs-down h3" type="button"></i>
+                <i class="bi bi-hand-thumbs-down h3" type="button" data-bs-toggle="modal" data-bs-target="#modalDislike"></i>
                 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info">
-                  <%= data.comment.length %>
+                  <%= data.dislikeAvis %>
                 </span>
               </div>
             </div>
             <div class="float-end">
               <div class="btn position-relative">
-                <i class="bi bi-chat-square-dots h3" onclick="addCommontaire1()" type="button"></i>
+                <i class="bi bi-chat-square-dots h3" type="button" data-bs-toggle="modal" data-bs-target="#modalCommentaire"></i>
                 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info">
                   <%= data.comment.length %>
                 </span>
@@ -88,5 +88,92 @@
           </div>
         </div>
     </div>
+
+
+  <!-- Modal Commentaire -->
+  <div class="modal fade" id="modalCommentaire" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <form class="modal-content" action="/Commentaires/addcommentaire" method="post">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" name="articleId" value="<%= data.article.id %>" class="form-control fw-bold" id="username">
+          <div class="form-floating mb-3">
+            <input type="text" name="name" class="form-control fw-bold" id="name">
+            <label for="name">Username</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" name="email" class="form-control fw-bold" id="email">
+            <label for="email">Email</label>
+          </div>
+          <div class="form-floating">
+            <textarea name="commentaire" class="form-control fw-bold" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+            <label for="floatingTextarea">Comments</label>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Publish</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Like -->
+  <div class="modal fade" id="modalLike" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <form class="modal-content" action="/Avis/addLikeAvis" method="post">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" name="articleId" value="<%= data.article.id %>" class="form-control fw-bold" id="username">
+          <div class="form-floating mb-3">
+            <input type="text" name="name" class="form-control fw-bold" id="name">
+            <label for="name">Username</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" name="email" class="form-control fw-bold" id="email">
+            <label for="email">Email</label>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Publish</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <!-- Modal Dislike -->
+  <div class="modal fade" id="modalDislike" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <form class="modal-content" action="/Avis/addDislikeAvis" method="post">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" name="articleId" value="<%= data.article.id %>" class="form-control fw-bold" id="username">
+          <div class="form-floating mb-3">
+            <input type="text" name="name" class="form-control fw-bold" id="name">
+            <label for="name">Username</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" name="email" class="form-control fw-bold" id="email">
+            <label for="email">Email</label>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Publish</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
 
   <%- include('includs/Footer.ejs') %>
