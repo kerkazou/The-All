@@ -89,5 +89,40 @@ module.exports = {
     getoneComment,
     updateComment,
     deleteComment,
-    // countArticle
 }
+
+
+// const addCommentaire = async(req , res) => {
+//     const data = {};
+//     Visiteur.findAll({where :{email: req.body.email}})
+//     .then(e => {
+//         data.visiteur = e;
+//         if(e.length != 0){
+//             Commentaire.create({
+//                 commentaire: req.body.commentaire,
+//                 articleId: req.body.articleId,
+//                 visiteurId: data.visiteur.id
+//             })
+//             .then(()=>{
+//                 res.redirect('/The-all/'+req.body.articleId);
+//             })
+//         }else{
+//             Visiteur.create({
+//                 name: req.body.name,
+//                 email: req.body.email
+//             }).then(e=>{
+//                 data.visiteur = e;
+//                 Commentaire.create({
+//                     commentaire: req.body.commentaire,
+//                     articleId: req.body.articleId,
+//                     visiteurId: data.visiteur.id
+//                 })
+//                 .then(()=>{
+//                     res.redirect('/The-all/'+req.body.articleId);
+//                 })
+//             }).catch(()=>{
+//                 res.json({Error:'Error'});
+//             })
+//         }
+//     })
+// }
