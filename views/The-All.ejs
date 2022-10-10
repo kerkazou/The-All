@@ -1,6 +1,5 @@
 <%- include('includs/Head.ejs') %>
 
-
     <!-- NavBar -->
     <%- include('includs/NavBar.ejs') %>
 
@@ -61,13 +60,13 @@
             <div class="col-md-10 col-11 d-flex flex-wrap justify-content-center align-items-center gap-md-4 gap-2 shadow rounded p-4"
                 id="sidebar_categorie">
                 <div>
-                    <input type="radio" name="buttonCategorie" value="All" id="all">
-                    <label class="btn" for="all">All</label>
+                    <input type="radio" onclick="selectCategory(0)" checked name="buttonCategorie" value="All" id="all">
+                    <label class="btn name-row" for="all">All</label>
                 </div>
                 <% for(var i=0; i<data.category.length; i++){ %>
                     <div>
-                        <input type="radio" name="buttonCategorie" value=<%=data.category[i].id%> id=<%=data.category[i].name%>>
-                        <label class="btn" for=<%=data.category[i].name%>><%= data.category[i].name %></label>
+                        <input type="radio" onclick="selectCategory('<%=data.category[i].id%>')" name="buttonCategorie" value=<%=data.category[i].id%> id=<%=data.category[i].name%>>
+                        <label class="btn name-row" id=<%=data.category[i].id%> for=<%=data.category[i].name%>><%= data.category[i].name %></label>
                     </div>
                 <% } %>
             </div>
@@ -75,35 +74,35 @@
                 <!-- Article -->
                 <div class="d-flex flex-wrap justify-content-center align-items-center p-3">
                     <% if(data.article.length>0){ %>
-                    <% for(var i=0; i<data.article.length; i++){ %>
-                        <div class="col-md-3 col-sm-6 col-6 p-2 articles">
-                            <div class="card">
-                                <img class="card-img-top" src="/assets/image-article/article1.jpg" alt="article1">
-                                <div class="p-2">
-                                    <div class="title"><a href="the-all/<%= data.article[i].id %>">
-                                            <%= data.article[i].title %>
-                                        </a></div>
-                                    <div class="categorie">
-                                        <%= data.article[i].categoryId %>
-                                    </div>
-                                    <div class="discription">
-                                        <%= data.article[i].discription %>
-                                    </div>
-                                    <a href="the-all/<%= data.article[i].id %>" class="lire_suite">Lire la suite
-                                        ...</a>
-                                    <div class="px-2 mt-1" id="action">
-                                        <div class="float-start" id="action_avis">
-                                            <i class="bi bi-hand-thumbs-up h4" type="button"></i>
-                                            <i class="bi bi-hand-thumbs-down h4" type="button"></i>
+                        <% for(var i=0; i<data.article.length; i++){ %>
+                            <div class="col-md-3 col-sm-6 col-6 p-2 articles">
+                                <div class="card">
+                                    <img class="card-img-top" src="/assets/image-article/article1.jpg" alt="article1">
+                                    <div class="p-2">
+                                        <div class="title"><a href="the-all/<%= data.article[i].id %>">
+                                                <%= data.article[i].title %>
+                                            </a></div>
+                                        <div class="categorie">
+                                            <%= data.article[i].categoryId %>
                                         </div>
-                                        <div class="float-end" id="action_commentaire">
-                                            <i class="bi bi-chat-square-dots h4" type="button"></i>
+                                        <div class="discription">
+                                            <%= data.article[i].discription %>
+                                        </div>
+                                        <a href="the-all/<%= data.article[i].id %>" class="lire_suite">Lire la suite
+                                            ...</a>
+                                        <div class="px-2 mt-1" id="action">
+                                            <div class="float-start" id="action_avis">
+                                                <i class="bi bi-hand-thumbs-up h4" type="button"></i>
+                                                <i class="bi bi-hand-thumbs-down h4" type="button"></i>
+                                            </div>
+                                            <div class="float-end" id="action_commentaire">
+                                                <i class="bi bi-chat-square-dots h4" type="button"></i>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    <% } %>
+                        <% } %>
                     <% }else{ %>
                         <h1 class="my-5">Pas des articles actuellement</h1>
                     <% } %>
@@ -111,13 +110,12 @@
             </div>
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-end">
-                    <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1"
-                            aria-disabled="true">Previous</a></li>
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                    </li>
                     <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
                     <li class="page-item">
-                        <a class="page-link" href="#">Next</a>
+                        <a class="page-link" href="#" tabindex="+1" aria-disabled="true">Next</a>
                     </li>
                 </ul>
             </nav>
@@ -170,6 +168,25 @@
                 <div class="text-center"><button class="btn text-uppercase" type="submit">Send Message</button></div>
             </form>
         </div>
+
+        <script>
+            function selectCategory(id){
+                // let category = document.getElementById(id)
+                // console.log(category);
+                // category.addEventListener('click', function () {
+                // let value = category.value.toUpperCase()
+                // let columns = [...document.querySelectorAll('.name-row')]
+                //     columns.forEach(column => {
+                //         if (!column.textContent.toUpperCase().trim().includes(value)) {
+                //         column.parentElement.style.display = 'none';
+                //         }
+                //         else {
+                //         column.parentElement.style.display = 'table-row';
+                //         }
+                //     })
+                // })
+            }
+          </script>
 
 
         <%- include('includs/Footer.ejs') %>

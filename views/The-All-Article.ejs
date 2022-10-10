@@ -41,24 +41,24 @@
           <div class="text-start" id="title"><%= data.article.title %></div>
           <div class="d-md-none d-flex flex-column justify-content-center align-items-center gap-3">
             <img class="w-100" src="/assets/image-article/article1.jpg" alt="">
-            <div class="w-100 d-flex justify-content-between">
+            <div class="w-75 d-flex justify-content-between">
               <div class="float-start">
                 <div class="btn position-relative">
-                  <i class="bi bi-hand-thumbs-up h3" type="button"></i>
+                  <i class="bi bi-hand-thumbs-up h3" type="button" data-bs-toggle="modal" data-bs-target="#modalLike"></i>
                   <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info">
-                    <%= data.comment.length %>
+                    <%= data.likeAvis %>
                   </span>
                 </div>
                 <div class="btn position-relative">
-                  <i class="bi bi-hand-thumbs-down h3" type="button"></i>
+                  <i class="bi bi-hand-thumbs-down h3" type="button" data-bs-toggle="modal" data-bs-target="#modalDislike"></i>
                   <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info">
-                    <%= data.comment.length %>
+                    <%= data.dislikeAvis %>
                   </span>
                 </div>
               </div>
               <div class="float-end">
                 <div class="btn position-relative">
-                  <i class="bi bi-chat-square-dots h3" onclick="addCommontaire2()" type="button"></i>
+                  <i class="bi bi-chat-square-dots h3" type="button" data-bs-toggle="modal" data-bs-target="#modalCommentaire"></i>
                   <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info">
                     <%= data.comment.length %>
                   </span>
@@ -73,7 +73,9 @@
           <div id="discription"><%= data.article.discription %></div>
           <div class="d-flex flex-column gap-2" id="commentaires">
             <% if(data.comment.length == 0){ %>
-              <p>Pas des commontaire</p>
+              <div class="commentaire d-flex justify-content-center align-items-center rounded px-3 shadow-sm py-2">
+                <div class="text px-2">Pas des commontaires</div>
+              </div>
             <% }else{ %>
               <% for(var i=0; i<data.comment.length; i++){ %>
                 <div class="commentaire d-flex flex-column gap-3 rounded px-3 shadow-sm py-2">
@@ -95,18 +97,18 @@
     <div class="modal-dialog">
       <form class="modal-content" action="/Commentaires/addcommentaire" method="post">
         <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+          <h5 class="modal-title" id="staticBackdropLabel">Ajouter un commontaire</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <input type="hidden" name="articleId" value="<%= data.article.id %>" class="form-control fw-bold" id="username">
           <div class="form-floating mb-3">
-            <input type="text" name="name" class="form-control fw-bold" id="name">
-            <label for="name">Username</label>
+            <input type="text" name="name" class="form-control fw-bold" id="nameComment">
+            <label for="nameComment">Username</label>
           </div>
           <div class="form-floating mb-3">
-            <input type="text" name="email" class="form-control fw-bold" id="email">
-            <label for="email">Email</label>
+            <input type="text" name="email" class="form-control fw-bold" id="emailComment">
+            <label for="emailComment">Email</label>
           </div>
           <div class="form-floating">
             <textarea name="commentaire" class="form-control fw-bold" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
@@ -115,65 +117,95 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Publish</button>
+          <button type="submit" onclick="formAddcommentaire()" class="btn btn-primary">Publish</button>
         </div>
       </form>
     </div>
   </div>
+  <script>
+    if(localStorage.getItem('username')){
+      document.getElementById('nameComment').value = localStorage.getItem('username');
+      document.getElementById('emailComment').value = localStorage.getItem('email');
+    }
+    function formAddcommentaire(){
+      localStorage.setItem('username', document.getElementById('nameComment').value);
+      localStorage.setItem('email', document.getElementById('emailComment').value);
+    }
+  </script>
 
   <!-- Modal Like -->
   <div class="modal fade" id="modalLike" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <form class="modal-content" action="/Avis/addLikeAvis" method="post">
         <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+          <h5 class="modal-title" id="staticBackdropLabel">Ajouter un avis</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <input type="hidden" name="articleId" value="<%= data.article.id %>" class="form-control fw-bold" id="username">
           <div class="form-floating mb-3">
-            <input type="text" name="name" class="form-control fw-bold" id="name">
+            <input type="text" name="name" class="form-control fw-bold" id="nameLike">
             <label for="name">Username</label>
           </div>
           <div class="form-floating mb-3">
-            <input type="text" name="email" class="form-control fw-bold" id="email">
+            <input type="text" name="email" class="form-control fw-bold" id="emailLike">
             <label for="email">Email</label>
           </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Publish</button>
+          <button type="submit" onclick="formAddlike()" class="btn btn-primary">Publish</button>
         </div>
       </form>
     </div>
   </div>
+  <script>
+    if(localStorage.getItem('username')){
+      document.getElementById('nameLike').value = localStorage.getItem('username');
+      document.getElementById('emailLike').value = localStorage.getItem('email');
+    }
+    function formAddlike(){
+      localStorage.setItem('username', document.getElementById('nameLike').value);
+      localStorage.setItem('email', document.getElementById('emailLike').value);
+    }
+  </script>
   
   <!-- Modal Dislike -->
   <div class="modal fade" id="modalDislike" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <form class="modal-content" action="/Avis/addDislikeAvis" method="post">
         <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+          <h5 class="modal-title" id="staticBackdropLabel">Ajouter un avis</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <input type="hidden" name="articleId" value="<%= data.article.id %>" class="form-control fw-bold" id="username">
           <div class="form-floating mb-3">
-            <input type="text" name="name" class="form-control fw-bold" id="name">
+            <input type="text" name="name" class="form-control fw-bold name" id="nameDislike">
             <label for="name">Username</label>
           </div>
           <div class="form-floating mb-3">
-            <input type="text" name="email" class="form-control fw-bold" id="email">
+            <input type="text" name="email" class="form-control fw-bold email" id="emailDislike">
             <label for="email">Email</label>
           </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Publish</button>
+          <button type="submit" onclick="formAdddislike()" class="btn btn-primary">Publish</button>
         </div>
       </form>
     </div>
   </div>
+  <script>
+    if(localStorage.getItem('username')){
+      document.getElementById('nameDislike').value = localStorage.getItem('username');
+      document.getElementById('emailDislike').value = localStorage.getItem('email');
+    }
+    function formAdddislike(){
+      localStorage.setItem('username', document.getElementById('nameDislike').value);
+      localStorage.setItem('email', document.getElementById('emailDislike').value);
+    }
+  </script>
 
 
   <%- include('includs/Footer.ejs') %>
