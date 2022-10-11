@@ -33,19 +33,30 @@ const getoneArticle = async (req, res) => {
 // Add Article
 const addArticle = async (req, res) => {
     const { body } = req;
-    Article.create({ ...body })
-        .then(() => {
-            { res.redirect('/articles') }
-        }).catch(() => {
-            res.json({ Error: 'Error' });
-        });
+    Article.create({
+        title: body.title,
+        image: body.image,
+        discription: body.discription,
+        categoryId: body.category
+    })
+    .then(() => {
+        { res.redirect('/articles') }
+    }).catch(() => {
+        res.json({ Error: 'Error' });
+    });
 }
 
 // Update Articles
 const updateArticle = async(req , res) => {
     let {id} = req.body;
-    const {body} = req;
-    Article.update({...body}, {where: {
+    const { body } = req;
+    Article.update({
+        title: body.title,
+        image: body.image,
+        discription: body.discription,
+        categoryId: body.category
+    },
+    {where: {
         id:id
     }})
     .then(()=>
