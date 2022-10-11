@@ -3,16 +3,7 @@ module.exports = (sequelize, DataTypes) => {
         commentaire: {
             type: DataTypes.TEXT,
             allowNull: false
-        },
-        // visiteurId: {
-        //     type: DataTypes.INTEGER,
-        //     allowNull: false
-        // },
-        // articleId : {
-        //     type: DataTypes.INTEGER,
-        //     allowNull: false
-        // },
-     
+        }
     })
     return Commentaire;
 }

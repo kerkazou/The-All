@@ -59,14 +59,10 @@
         <div class="d-flex flex-column justify-content-center align-items-center px-2" id="blog">
             <div class="col-md-10 col-11 d-flex flex-wrap justify-content-center align-items-center gap-md-4 gap-2 shadow rounded p-4"
                 id="sidebar_categorie">
-                <div>
-                    <input type="radio" onclick="selectCategory(0)" checked name="buttonCategorie" value="All" id="all">
-                    <label class="btn name-row" for="all">All</label>
-                </div>
                 <% for(var i=0; i<data.category.length; i++){ %>
                     <div>
-                        <input type="radio" onclick="selectCategory('<%=data.category[i].id%>')" name="buttonCategorie" value=<%=data.category[i].id%> id=<%=data.category[i].name%>>
-                        <label class="btn name-row" id=<%=data.category[i].id%> for=<%=data.category[i].name%>><%= data.category[i].name %></label>
+                        <input type="radio" onclick="selectCategory('<%=data.category[i].name%>')" name="buttonCategorie" value=<%=data.category[i].id%> id=<%=data.category[i].name%>>
+                        <label class="btn" for=<%=data.category[i].name%>><%= data.category[i].name %></label>
                     </div>
                 <% } %>
             </div>
@@ -82,7 +78,7 @@
                                         <div class="title"><a href="the-all/<%= data.article[i].id %>">
                                                 <%= data.article[i].title %>
                                             </a></div>
-                                        <div class="categorie">
+                                        <div class="categorie name-row">
                                             <%= data.article[i].categoryId %>
                                         </div>
                                         <div class="discription">
@@ -171,22 +167,19 @@
 
         <script>
             function selectCategory(id){
-                // let category = document.getElementById(id)
-                // console.log(category);
-                // category.addEventListener('click', function () {
-                // let value = category.value.toUpperCase()
-                // let columns = [...document.querySelectorAll('.name-row')]
-                //     columns.forEach(column => {
-                //         if (!column.textContent.toUpperCase().trim().includes(value)) {
-                //         column.parentElement.style.display = 'none';
-                //         }
-                //         else {
-                //         column.parentElement.style.display = 'table-row';
-                //         }
-                //     })
-                // })
+                let category = document.getElementById(id)
+                let value = category.value.toUpperCase()
+                let card = [...document.querySelectorAll('.name-row')]
+                card.forEach(card => {
+                    if (!card.textContent.toUpperCase().trim().includes(value)) {
+                        card.parentElement.parentElement.style.display = 'none';
+                    }
+                    else {
+                        card.parentElement.parentElement.style.display = 'flex';
+                    }
+                })
             }
-          </script>
+        </script>
 
 
         <%- include('includs/Footer.ejs') %>
